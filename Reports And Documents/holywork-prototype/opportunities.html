@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HolyWork - Find Opportunities</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Header -->
+    <div class="top-header">
+        <button class="header-btn" onclick="history.back()">←</button>
+        <h1 class="header-title">Find Opportunities</h1>
+        <button class="header-btn">🔔</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="screen" style="padding-top: 16px;">
+        <div class="container">
+            <!-- Filter Chips -->
+            <div class="filter-chips">
+                <div class="chip active">My Church</div>
+                <div class="chip">Nearby Churches</div>
+                <div class="chip">This Week</div>
+                <div class="chip">My Teams</div>
+            </div>
+
+            <!-- Opportunities List -->
+            <div class="section">
+                <!-- Opportunity 1 - Urgent -->
+                <div class="opportunity-card" onclick="openSignUpModal('Hospitality Team', 'Sunday Nov 3, 9:00 AM', 'Christine Church')">
+                    <div class="opportunity-badge" style="background-color: var(--error-red);">🔥 Urgent</div>
+                    <h3 class="card-title">Hospitality Team</h3>
+                    <p class="card-subtitle">📍 Christine Church</p>
+                    <p class="text-small">⏰ Sunday, Nov 3 • 9:00 AM - 11:00 AM</p>
+                    <p class="text-small" style="margin-top: 8px;">
+                        Greet guests, serve coffee, and create a welcoming atmosphere for our Sunday service.
+                    </p>
+                    <div class="opportunity-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 40%;"></div>
+                        </div>
+                        <p class="progress-text">2 of 5 volunteers signed up</p>
+                    </div>
+                </div>
+
+                <!-- Opportunity 2 - Available -->
+                <div class="opportunity-card" onclick="openSignUpModal('Music Team - Guitarist', 'Sunday Nov 3, 8:30 AM', 'Grace Community')">
+                    <div class="opportunity-badge" style="background-color: var(--info-blue);">🎸 Cross-Church</div>
+                    <h3 class="card-title">Music Team - Guitarist</h3>
+                    <p class="card-subtitle">📍 Grace Community Church (5 miles)</p>
+                    <p class="text-small">⏰ Sunday, Nov 3 • 8:30 AM - 11:00 AM</p>
+                    <p class="text-small" style="margin-top: 8px;">
+                        Fill in for worship service. Contemporary songs, chord charts provided.
+                    </p>
+                    <div class="opportunity-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 80%;"></div>
+                        </div>
+                        <p class="progress-text">4 of 5 volunteers signed up</p>
+                    </div>
+                </div>
+
+                <!-- Opportunity 3 -->
+                <div class="opportunity-card" onclick="openSignUpModal('Kids Church Team', 'Sunday Nov 10, 9:00 AM', 'Christine Church')">
+                    <div class="opportunity-badge" style="background-color: var(--success-green);">✅ Available</div>
+                    <h3 class="card-title">Kids Church Team</h3>
+                    <p class="card-subtitle">📍 Christine Church</p>
+                    <p class="text-small">⏰ Sunday, Nov 10 • 9:00 AM - 11:30 AM</p>
+                    <p class="text-small" style="margin-top: 8px;">
+                        Help teach Sunday school for ages 6-10. Lesson plan and materials provided.
+                    </p>
+                    <div class="opportunity-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 50%;"></div>
+                        </div>
+                        <p class="progress-text">2 of 4 volunteers signed up</p>
+                    </div>
+                </div>
+
+                <!-- Opportunity 4 -->
+                <div class="opportunity-card" onclick="openSignUpModal('Set-up Team', 'Sunday Nov 10, 8:00 AM', 'Christine Church')">
+                    <div class="opportunity-badge" style="background-color: var(--success-green);">✅ Available</div>
+                    <h3 class="card-title">Set-up Team</h3>
+                    <p class="card-subtitle">📍 Christine Church</p>
+                    <p class="text-small">⏰ Sunday, Nov 10 • 8:00 AM - 9:00 AM</p>
+                    <p class="text-small" style="margin-top: 8px;">
+                        Arrange chairs, test sound system, prepare sanctuary for worship service.
+                    </p>
+                    <div class="opportunity-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 100%;"></div>
+                        </div>
+                        <p class="progress-text">5 of 5 volunteers signed up - Waitlist available</p>
+                    </div>
+                </div>
+
+                <!-- Opportunity 5 -->
+                <div class="opportunity-card" onclick="openSignUpModal('Clean-up Team', 'Sunday Nov 10, 11:00 AM', 'Christine Church')">
+                    <div class="opportunity-badge" style="background-color: var(--warning-amber);">⚠️ Low Volunteers</div>
+                    <h3 class="card-title">Clean-up Team</h3>
+                    <p class="card-subtitle">📍 Christine Church</p>
+                    <p class="text-small">⏰ Sunday, Nov 10 • 11:00 AM - 12:00 PM</p>
+                    <p class="text-small" style="margin-top: 8px;">
+                        Help clean up after service, put away chairs, tidy hospitality area.
+                    </p>
+                    <div class="opportunity-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 33%;"></div>
+                        </div>
+                        <p class="progress-text">1 of 3 volunteers signed up</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sign-Up Modal -->
+    <div id="signUpModal" class="modal-overlay" onclick="closeModal(event)">
+        <div class="modal" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h2 class="modal-title">Sign Up to Serve</h2>
+            </div>
+            <div class="modal-body">
+                <h3 id="modalRoleName" style="margin-bottom: 8px;">Hospitality Team</h3>
+                <p class="text-small" id="modalDateTime">Sunday Nov 3, 9:00 AM</p>
+                <p class="text-small" id="modalLocation">📍 Christine Church</p>
+
+                <div style="margin: 24px 0; padding: 16px; background-color: var(--primary-blue-50); border-radius: 8px;">
+                    <p style="margin: 0; font-size: 14px; color: var(--primary-blue-700);">
+                        <strong>📬 Reminders will be sent:</strong><br>
+                        • 72 hours before<br>
+                        • 24 hours before<br>
+                        • On the day of service
+                    </p>
+                </div>
+
+                <p style="font-size: 14px; color: var(--gray-600);">
+                    By signing up, you'll receive reminders and can coordinate with your team through the app.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeSignUpModal()">Cancel</button>
+                <button class="btn btn-success" onclick="confirmSignUp()">✓ Sign Me Up</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal-overlay" onclick="closeModal(event)">
+        <div class="modal" onclick="event.stopPropagation()">
+            <div class="modal-body" style="text-align: center; padding: 40px 20px;">
+                <div style="font-size: 64px; margin-bottom: 16px;">✅</div>
+                <h2 class="modal-title">You're Signed Up!</h2>
+                <p style="font-size: 16px; color: var(--gray-600); margin-top: 16px;">
+                    Thank you for serving! We've added this commitment to your schedule.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <a href="schedule.html" class="btn btn-primary">View My Schedule</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <span class="nav-icon">🏠</span>
+            <span>Home</span>
+        </a>
+        <a href="schedule.html" class="nav-item">
+            <span class="nav-icon">📅</span>
+            <span>Schedule</span>
+        </a>
+        <a href="opportunities.html" class="nav-item active">
+            <span class="nav-icon">🔍</span>
+            <span>Find</span>
+        </a>
+        <a href="prayer-wall.html" class="nav-item">
+            <span class="nav-icon">🙏</span>
+            <span>Prayer</span>
+        </a>
+        <a href="more.html" class="nav-item">
+            <span class="nav-icon">⚙️</span>
+            <span>More</span>
+        </a>
+    </nav>
+
+    <script src="app.js"></script>
+    <script>
+        function openSignUpModal(role, dateTime, location) {
+            document.getElementById('modalRoleName').textContent = role;
+            document.getElementById('modalDateTime').textContent = dateTime;
+            document.getElementById('modalLocation').textContent = '📍 ' + location;
+            document.getElementById('signUpModal').classList.add('active');
+        }
+
+        function closeSignUpModal() {
+            document.getElementById('signUpModal').classList.remove('active');
+        }
+
+        function confirmSignUp() {
+            closeSignUpModal();
+            document.getElementById('successModal').classList.add('active');
+        }
+
+        function closeModal(event) {
+            if (event.target.classList.contains('modal-overlay')) {
+                event.target.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>

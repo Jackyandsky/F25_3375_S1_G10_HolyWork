@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HolyWork - Give</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Header -->
+    <div class="top-header">
+        <button class="header-btn" onclick="history.back()">←</button>
+        <h1 class="header-title">Give</h1>
+        <button class="header-btn" onclick="viewHistory()">📊</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="screen" style="padding-top: 16px;">
+        <div class="container">
+            <!-- Giving Quote -->
+            <div class="card" style="background: linear-gradient(135deg, var(--primary-blue-500), var(--prayer-purple)); color: white; text-align: center; margin-bottom: 24px;">
+                <p style="font-size: 18px; font-style: italic; margin: 0 0 8px 0;">
+                    "Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver."
+                </p>
+                <p style="font-size: 14px; opacity: 0.9; margin: 0;">
+                    2 Corinthians 9:7
+                </p>
+            </div>
+
+            <!-- Giving Form -->
+            <div class="section">
+                <h2 class="section-title">Make a Donation</h2>
+
+                <div class="card">
+                    <!-- Donation Type -->
+                    <div class="form-group">
+                        <label class="form-label">Donation Type</label>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                            <button id="oneTimeBtn" class="btn btn-primary" onclick="selectDonationType('oneTime')" style="display: flex; flex-direction: column; align-items: center; padding: 16px;">
+                                <span style="font-size: 24px; margin-bottom: 4px;">💵</span>
+                                <span>One-Time</span>
+                            </button>
+                            <button id="recurringBtn" class="btn btn-secondary" onclick="selectDonationType('recurring')" style="display: flex; flex-direction: column; align-items: center; padding: 16px;">
+                                <span style="font-size: 24px; margin-bottom: 4px;">🔄</span>
+                                <span>Recurring</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Recurring Frequency (hidden by default) -->
+                    <div id="frequencySection" class="form-group" style="display: none;">
+                        <label class="form-label">Frequency</label>
+                        <select class="form-select">
+                            <option>Weekly</option>
+                            <option>Bi-weekly</option>
+                            <option selected>Monthly</option>
+                            <option>Quarterly</option>
+                        </select>
+                    </div>
+
+                    <!-- Amount -->
+                    <div class="form-group">
+                        <label class="form-label">Amount</label>
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 12px;">
+                            <button class="btn btn-secondary" onclick="selectAmount(25)" style="font-size: 16px;">$25</button>
+                            <button class="btn btn-secondary" onclick="selectAmount(50)" style="font-size: 16px;">$50</button>
+                            <button class="btn btn-secondary" onclick="selectAmount(100)" style="font-size: 16px;">$100</button>
+                            <button class="btn btn-secondary" onclick="selectAmount(200)" style="font-size: 16px;">$200</button>
+                            <button class="btn btn-secondary" onclick="selectAmount(500)" style="font-size: 16px;">$500</button>
+                            <button class="btn btn-secondary" onclick="selectCustomAmount()" style="font-size: 16px;">Custom</button>
+                        </div>
+                        <div style="position: relative;">
+                            <span style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); font-size: 18px; color: var(--gray-500);">$</span>
+                            <input type="number" id="amountInput" class="form-input" placeholder="0.00" min="0" step="0.01" style="padding-left: 32px; font-size: 18px; font-weight: 600;">
+                        </div>
+                    </div>
+
+                    <!-- Fund Designation -->
+                    <div class="form-group">
+                        <label class="form-label">Where should this go?</label>
+                        <select class="form-select" id="fundSelect">
+                            <option value="general" selected>General Fund - Where most needed</option>
+                            <option value="missions">Missions & Outreach</option>
+                            <option value="building">Building Fund</option>
+                            <option value="youth">Youth Ministry</option>
+                            <option value="worship">Worship & Music</option>
+                            <option value="benevolence">Benevolence Fund</option>
+                        </select>
+                        <p class="form-help" id="fundDescription">
+                            Supports day-to-day church operations, staff, and ministry activities.
+                        </p>
+                    </div>
+
+                    <!-- Anonymous Option -->
+                    <div class="form-group">
+                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                            <input type="checkbox" id="anonymousCheck" style="width: 20px; height: 20px;">
+                            <span style="font-size: 14px;">Make this donation anonymous</span>
+                        </label>
+                    </div>
+
+                    <!-- Dedication (Optional) -->
+                    <div class="form-group">
+                        <label class="form-label">Dedication (Optional)</label>
+                        <textarea class="form-textarea" placeholder="In honor of... In memory of..." rows="2"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Method -->
+            <div class="section">
+                <h2 class="section-title">Payment Method</h2>
+
+                <div class="card">
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 16px;">
+                        <button class="btn" style="background-color: var(--success-green); color: white; display: flex; flex-direction: column; align-items: center; padding: 16px;" onclick="selectPaymentMethod('card')">
+                            <span style="font-size: 24px; margin-bottom: 4px;">💳</span>
+                            <span>Credit/Debit</span>
+                        </button>
+                        <button class="btn btn-secondary" onclick="selectPaymentMethod('bank')" style="display: flex; flex-direction: column; align-items: center; padding: 16px;">
+                            <span style="font-size: 24px; margin-bottom: 4px;">🏦</span>
+                            <span>Bank Transfer</span>
+                        </button>
+                    </div>
+
+                    <!-- Saved Payment Methods -->
+                    <div style="padding: 16px; background-color: var(--gray-100); border-radius: 8px;">
+                        <h4 style="font-size: 14px; margin: 0 0 12px 0;">Saved Payment Methods</h4>
+
+                        <!-- Saved Card 1 -->
+                        <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background-color: white; border-radius: 8px; margin-bottom: 8px; cursor: pointer; border: 2px solid var(--primary-blue-500);">
+                            <input type="radio" name="paymentMethod" checked style="width: 20px; height: 20px;">
+                            <div style="flex: 1;">
+                                <strong style="font-size: 14px;">Visa •••• 4242</strong>
+                                <p class="text-tiny" style="margin: 4px 0 0 0; color: var(--gray-600);">Expires 12/2026</p>
+                            </div>
+                            <span style="font-size: 24px;">💳</span>
+                        </div>
+
+                        <!-- Add New Payment Method -->
+                        <button class="btn btn-secondary" style="width: 100%; font-size: 14px;" onclick="addPaymentMethod()">
+                            + Add New Payment Method
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Security Notice -->
+            <div style="padding: 16px; background-color: var(--success-green); color: white; border-radius: 8px; text-align: center; margin-bottom: 16px;">
+                <p style="margin: 0; font-size: 14px;">
+                    🔒 <strong>Secure Payment</strong> • Your information is encrypted and secure
+                </p>
+            </div>
+
+            <!-- Give Button -->
+            <button class="btn" style="background: linear-gradient(135deg, var(--primary-blue-500), var(--prayer-purple)); color: white; font-size: 18px; padding: 16px; margin-bottom: 16px;" onclick="processDonation()">
+                💝 Complete Donation
+            </button>
+
+            <!-- Tax Receipt Info -->
+            <div class="card" style="background-color: var(--gray-100);">
+                <h4 style="font-size: 14px; margin: 0 0 8px 0;">📄 Tax Receipt Information</h4>
+                <p class="text-small" style="margin: 0; color: var(--gray-700);">
+                    You will receive a tax receipt via email after your donation. All donations are tax-deductible to the extent allowed by law. Our EIN: XX-XXXXXXX
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Giving History Modal -->
+    <div id="historyModal" class="modal-overlay" onclick="closeModal(event)">
+        <div class="modal" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h2 class="modal-title">Giving History</h2>
+            </div>
+            <div class="modal-body">
+                <!-- Summary -->
+                <div style="padding: 16px; background: linear-gradient(135deg, var(--primary-blue-500), var(--prayer-purple)); color: white; border-radius: 8px; text-align: center; margin-bottom: 24px;">
+                    <p style="margin: 0 0 4px 0; font-size: 14px; opacity: 0.9;">Total Given in 2025</p>
+                    <h2 style="margin: 0; font-size: 36px; font-weight: 700;">$1,450</h2>
+                    <p style="margin: 8px 0 0 0; font-size: 12px; opacity: 0.9;">12 donations</p>
+                </div>
+
+                <!-- Recent Donations -->
+                <h4 style="font-size: 16px; margin: 0 0 12px 0;">Recent Donations</h4>
+
+                <!-- Donation 1 -->
+                <div style="padding: 12px; border: 1px solid var(--gray-200); border-radius: 8px; margin-bottom: 12px;">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 4px;">
+                        <div>
+                            <strong style="font-size: 16px; color: var(--success-green);">$100.00</strong>
+                            <p class="text-small" style="margin: 4px 0 0 0; color: var(--gray-600);">General Fund</p>
+                        </div>
+                        <span class="text-tiny" style="color: var(--gray-400);">Nov 1, 2025</span>
+                    </div>
+                    <div style="margin-top: 8px;">
+                        <button class="btn btn-secondary" style="font-size: 12px; padding: 6px 12px;" onclick="downloadReceipt()">
+                            📥 Download Receipt
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Donation 2 -->
+                <div style="padding: 12px; border: 1px solid var(--gray-200); border-radius: 8px; margin-bottom: 12px;">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 4px;">
+                        <div>
+                            <strong style="font-size: 16px; color: var(--success-green);">$50.00</strong>
+                            <p class="text-small" style="margin: 4px 0 0 0; color: var(--gray-600);">Missions & Outreach</p>
+                        </div>
+                        <span class="text-tiny" style="color: var(--gray-400);">Oct 15, 2025</span>
+                    </div>
+                    <div style="margin-top: 8px;">
+                        <button class="btn btn-secondary" style="font-size: 12px; padding: 6px 12px;" onclick="downloadReceipt()">
+                            📥 Download Receipt
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Donation 3 -->
+                <div style="padding: 12px; border: 1px solid var(--gray-200); border-radius: 8px; margin-bottom: 12px;">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 4px;">
+                        <div>
+                            <strong style="font-size: 16px; color: var(--success-green);">$100.00</strong>
+                            <p class="text-small" style="margin: 4px 0 0 0; color: var(--gray-600);">General Fund</p>
+                        </div>
+                        <span class="text-tiny" style="color: var(--gray-400);">Oct 1, 2025</span>
+                    </div>
+                    <div style="margin-top: 8px;">
+                        <button class="btn btn-secondary" style="font-size: 12px; padding: 6px 12px;" onclick="downloadReceipt()">
+                            📥 Download Receipt
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Download Annual Statement -->
+                <button class="btn btn-primary" style="width: 100%; margin-top: 16px;" onclick="downloadAnnualStatement()">
+                    📊 Download 2025 Annual Statement
+                </button>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeHistoryModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal-overlay" onclick="closeModal(event)">
+        <div class="modal" onclick="event.stopPropagation()">
+            <div class="modal-body" style="text-align: center; padding: 40px 20px;">
+                <div style="font-size: 64px; margin-bottom: 16px;">💝</div>
+                <h2 class="modal-title">Thank You for Your Gift!</h2>
+                <p style="font-size: 16px; color: var(--gray-600); margin-top: 16px;">
+                    Your donation of <strong id="donationAmount">$100.00</strong> has been received.
+                </p>
+                <div style="margin-top: 24px; padding: 16px; background-color: var(--primary-blue-50); border-radius: 8px;">
+                    <p style="margin: 0; font-size: 14px; color: var(--primary-blue-700);">
+                        ✓ Tax receipt sent to your email<br>
+                        ✓ Donation recorded in your giving history
+                    </p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeSuccessModal()">Close</button>
+                <button class="btn btn-primary" onclick="viewHistory()">View History</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <span class="nav-icon">🏠</span>
+            <span>Home</span>
+        </a>
+        <a href="schedule.html" class="nav-item">
+            <span class="nav-icon">📅</span>
+            <span>Schedule</span>
+        </a>
+        <a href="opportunities.html" class="nav-item">
+            <span class="nav-icon">🔍</span>
+            <span>Find</span>
+        </a>
+        <a href="prayer-wall.html" class="nav-item">
+            <span class="nav-icon">🙏</span>
+            <span>Prayer</span>
+        </a>
+        <a href="more.html" class="nav-item">
+            <span class="nav-icon">⚙️</span>
+            <span>More</span>
+        </a>
+    </nav>
+
+    <script src="app.js"></script>
+    <script>
+        let donationType = 'oneTime';
+        let selectedAmount = 0;
+
+        function selectDonationType(type) {
+            donationType = type;
+            const oneTimeBtn = document.getElementById('oneTimeBtn');
+            const recurringBtn = document.getElementById('recurringBtn');
+            const frequencySection = document.getElementById('frequencySection');
+
+            if (type === 'oneTime') {
+                oneTimeBtn.className = 'btn btn-primary';
+                recurringBtn.className = 'btn btn-secondary';
+                frequencySection.style.display = 'none';
+            } else {
+                oneTimeBtn.className = 'btn btn-secondary';
+                recurringBtn.className = 'btn btn-primary';
+                frequencySection.style.display = 'block';
+            }
+        }
+
+        function selectAmount(amount) {
+            selectedAmount = amount;
+            document.getElementById('amountInput').value = amount.toFixed(2);
+        }
+
+        function selectCustomAmount() {
+            document.getElementById('amountInput').focus();
+        }
+
+        function selectPaymentMethod(method) {
+            if (method === 'bank') {
+                alert('Bank transfer setup coming soon! For now, please use credit/debit card.');
+            }
+        }
+
+        function addPaymentMethod() {
+            alert('Add payment method feature coming soon! You\'ll be able to securely add and manage payment methods.');
+        }
+
+        // Update fund description when selection changes
+        document.addEventListener('DOMContentLoaded', function() {
+            const fundSelect = document.getElementById('fundSelect');
+            const fundDescription = document.getElementById('fundDescription');
+
+            const descriptions = {
+                'general': 'Supports day-to-day church operations, staff, and ministry activities.',
+                'missions': 'Supports local and global mission work, evangelism, and community outreach.',
+                'building': 'Dedicated to church building maintenance, improvements, and expansion.',
+                'youth': 'Supports youth programs, camps, and ministry activities for young people.',
+                'worship': 'Funds worship services, music ministry, and equipment.',
+                'benevolence': 'Helps church members and community members in financial need.'
+            };
+
+            fundSelect.addEventListener('change', function() {
+                fundDescription.textContent = descriptions[this.value];
+            });
+        });
+
+        function processDonation() {
+            const amount = document.getElementById('amountInput').value;
+
+            if (!amount || parseFloat(amount) <= 0) {
+                alert('Please enter a valid donation amount');
+                return;
+            }
+
+            // Show success modal
+            document.getElementById('donationAmount').textContent = '$' + parseFloat(amount).toFixed(2);
+            document.getElementById('successModal').classList.add('active');
+
+            // Reset form
+            document.getElementById('amountInput').value = '';
+        }
+
+        function closeSuccessModal() {
+            document.getElementById('successModal').classList.remove('active');
+        }
+
+        function viewHistory() {
+            document.getElementById('historyModal').classList.add('active');
+        }
+
+        function closeHistoryModal() {
+            document.getElementById('historyModal').classList.remove('active');
+        }
+
+        function downloadReceipt() {
+            alert('✓ Tax receipt downloaded! Check your downloads folder.');
+        }
+
+        function downloadAnnualStatement() {
+            alert('✓ Annual giving statement for 2025 downloaded! This document can be used for tax purposes.');
+        }
+
+        function closeModal(event) {
+            if (event.target.classList.contains('modal-overlay')) {
+                event.target.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>

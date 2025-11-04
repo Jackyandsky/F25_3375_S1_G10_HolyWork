@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HolyWork - Bible Study</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Header -->
+    <div class="top-header">
+        <button class="header-btn" onclick="history.back()">←</button>
+        <h1 class="header-title">Bible Study</h1>
+        <button class="header-btn">🔍</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="screen" style="padding-top: 16px;">
+        <div class="container">
+            <!-- This Sunday's Readings (Alice Chen's Key Need!) -->
+            <div class="section">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                    <h2 class="section-title mb-0">📅 This Sunday (Nov 3)</h2>
+                    <span class="badge badge-success" style="font-size: 11px;">Available Monday!</span>
+                </div>
+
+                <!-- Featured Reading Card -->
+                <div class="card" style="border-left: 4px solid var(--prayer-purple); background: linear-gradient(to bottom, white 0%, var(--primary-blue-50) 100%);">
+                    <div style="font-size: 14px; font-weight: 600; color: var(--prayer-purple); margin-bottom: 8px;">
+                        GOSPEL READING
+                    </div>
+                    <h3 style="margin-bottom: 8px;">Luke 19:1-10</h3>
+                    <p style="font-size: 14px; color: var(--gray-600); margin-bottom: 16px;">
+                        The Story of Zacchaeus
+                    </p>
+                    <div style="background: white; padding: 16px; border-radius: 8px; margin-bottom: 16px;">
+                        <p style="font-size: 14px; line-height: 1.8; color: var(--gray-900); font-style: italic;">
+                            "Jesus entered Jericho and was passing through. A man was there by the name of Zacchaeus; he was a chief tax collector and was wealthy. He wanted to see who Jesus was, but because he was short he could not see over the crowd..."
+                        </p>
+                        <button class="btn btn-secondary" style="margin-top: 12px; font-size: 14px;" onclick="openReading('Luke 19:1-10')">
+                            📖 Read Full Passage
+                        </button>
+                    </div>
+                    <div style="display: flex; gap: 8px;">
+                        <button class="btn btn-primary" style="font-size: 14px; flex: 1;" onclick="openStudyGuide()">
+                            📝 Study Guide
+                        </button>
+                        <button class="btn btn-secondary" style="font-size: 14px; flex: 1;" onclick="shareReading()">
+                            📤 Share
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Other Readings -->
+                <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 16px;">
+                    <!-- Epistle -->
+                    <div class="card" onclick="openReading('2 Thessalonians 1:1-4')" style="cursor: pointer;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <div class="text-small" style="color: var(--prayer-purple); font-weight: 600;">EPISTLE</div>
+                                <h4 style="margin: 4px 0;">2 Thessalonians 1:1-4</h4>
+                                <p class="text-small" style="margin: 0; color: var(--gray-600);">Paul's Thanksgiving</p>
+                            </div>
+                            <span style="color: var(--gray-400); font-size: 20px;">→</span>
+                        </div>
+                    </div>
+
+                    <!-- Psalm -->
+                    <div class="card" onclick="openReading('Psalm 32')" style="cursor: pointer;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <div class="text-small" style="color: var(--prayer-purple); font-weight: 600;">PSALM</div>
+                                <h4 style="margin: 4px 0;">Psalm 32</h4>
+                                <p class="text-small" style="margin: 0; color: var(--gray-600);">Blessed is the Forgiven</p>
+                            </div>
+                            <span style="color: var(--gray-400); font-size: 20px;">→</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reading Plans -->
+            <div class="section">
+                <h2 class="section-title">📚 My Reading Plans</h2>
+
+                <!-- Active Plan -->
+                <div class="card" style="border-left: 4px solid var(--success-green);">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 8px;">
+                        <div>
+                            <h3 style="margin-bottom: 4px;">Gospel of John</h3>
+                            <p class="text-small" style="margin: 0; color: var(--gray-600);">30-Day Reading Plan</p>
+                        </div>
+                        <div class="badge badge-success">Active</div>
+                    </div>
+                    <div class="progress-bar" style="margin: 16px 0 8px 0;">
+                        <div class="progress-fill" style="width: 60%; background-color: var(--success-green);"></div>
+                    </div>
+                    <p class="progress-text">Day 18 of 30 • 60% Complete</p>
+                    <button class="btn btn-success" style="margin-top: 12px; font-size: 14px;" onclick="continueReading()">
+                        Continue Reading →
+                    </button>
+                </div>
+
+                <!-- Browse More Plans -->
+                <button class="btn btn-secondary" style="margin-top: 16px;" onclick="browsePlans()">
+                    + Browse Reading Plans
+                </button>
+            </div>
+
+            <!-- Recent Study Notes -->
+            <div class="section">
+                <h2 class="section-title">📝 My Study Notes</h2>
+
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 8px;">
+                        <div>
+                            <h4 style="margin-bottom: 4px;">John 3:16</h4>
+                            <p class="text-tiny" style="margin: 0; color: var(--gray-400);">2 days ago</p>
+                        </div>
+                    </div>
+                    <p style="font-size: 14px; color: var(--gray-700); line-height: 1.6;">
+                        "Such an incredible reminder of God's love. The word 'whoever' means this promise is for everyone..."
+                    </p>
+                    <div style="margin-top: 12px; display: flex; gap: 8px;">
+                        <button class="btn btn-secondary" style="font-size: 13px; padding: 6px 12px; width: auto;">
+                            ✏️ Edit
+                        </button>
+                        <button class="btn btn-secondary" style="font-size: 13px; padding: 6px 12px; width: auto;">
+                            📤 Share
+                        </button>
+                    </div>
+                </div>
+
+                <button class="btn btn-secondary" style="margin-top: 16px;" onclick="viewAllNotes()">
+                    View All Notes (12)
+                </button>
+            </div>
+
+            <!-- Devotionals -->
+            <div class="section">
+                <h2 class="section-title">✨ Daily Devotional</h2>
+
+                <div class="card" style="background: linear-gradient(135deg, var(--prayer-purple), var(--prayer-purple-light)); color: white;">
+                    <div style="font-size: 12px; opacity: 0.9; margin-bottom: 8px;">TODAY'S DEVOTIONAL</div>
+                    <h3 style="margin-bottom: 12px; color: white;">"Seeking First the Kingdom"</h3>
+                    <p style="font-size: 14px; line-height: 1.6; opacity: 0.95; margin-bottom: 16px;">
+                        Just as Zacchaeus climbed a tree to see Jesus, what obstacles are you willing to overcome to draw closer to God today?
+                    </p>
+                    <button class="btn" style="background: white; color: var(--prayer-purple); font-size: 14px;">
+                        Read Full Devotional
+                    </button>
+                </div>
+            </div>
+
+            <!-- Study Groups -->
+            <div class="section">
+                <h2 class="section-title">👥 Study Groups</h2>
+
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: start;">
+                        <div>
+                            <h4 style="margin-bottom: 4px;">Young Adults Bible Study</h4>
+                            <p class="text-small" style="margin: 4px 0; color: var(--gray-600);">15 members</p>
+                            <p class="text-small" style="margin: 0; color: var(--gray-600);">📅 Every Wednesday, 7:00 PM</p>
+                        </div>
+                        <div class="badge badge-info">Joined</div>
+                    </div>
+                    <button class="btn btn-secondary" style="margin-top: 12px; font-size: 14px;" onclick="window.location.href='team-chat.html'">
+                        💬 Group Discussion
+                    </button>
+                </div>
+
+                <button class="btn btn-secondary" style="margin-top: 16px;" onclick="browseGroups()">
+                    🔍 Find More Groups
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reading Modal -->
+    <div id="readingModal" class="modal-overlay" onclick="closeModal(event)">
+        <div class="modal" onclick="event.stopPropagation()" style="max-width: 500px;">
+            <div class="modal-header">
+                <h2 class="modal-title" id="readingTitle">Luke 19:1-10</h2>
+            </div>
+            <div class="modal-body" style="max-height: 400px; overflow-y: auto;">
+                <div style="margin-bottom: 16px;">
+                    <label class="form-label">Translation</label>
+                    <select class="form-select">
+                        <option>NIV - New International Version</option>
+                        <option>ESV - English Standard Version</option>
+                        <option>KJV - King James Version</option>
+                        <option>NRSV - New Revised Standard</option>
+                        <option>The Message</option>
+                    </select>
+                </div>
+                <div style="background: var(--gray-50); padding: 16px; border-radius: 8px; font-size: 15px; line-height: 1.8;">
+                    <p><strong>1</strong> Jesus entered Jericho and was passing through. <strong>2</strong> A man was there by the name of Zacchaeus; he was a chief tax collector and was wealthy. <strong>3</strong> He wanted to see who Jesus was, but because he was short he could not see over the crowd. <strong>4</strong> So he ran ahead and climbed a sycamore-fig tree to see him, since Jesus was coming that way.</p>
+                    <p><strong>5</strong> When Jesus reached the spot, he looked up and said to him, "Zacchaeus, come down immediately. I must stay at your house today." <strong>6</strong> So he came down at once and welcomed him gladly.</p>
+                    <p><strong>7</strong> All the people saw this and began to mutter, "He has gone to be the guest of a sinner."</p>
+                    <p><strong>8</strong> But Zacchaeus stood up and said to the Lord, "Look, Lord! Here and now I give half of my possessions to the poor, and if I have cheated anybody out of anything, I will pay back four times the amount."</p>
+                    <p><strong>9</strong> Jesus said to him, "Today salvation has come to this house, because this man, too, is a son of Abraham. <strong>10</strong> For the Son of Man came to seek and to save the lost."</p>
+                </div>
+                <button class="btn btn-secondary" style="margin-top: 16px; font-size: 14px;" onclick="addNote()">
+                    📝 Add Personal Note
+                </button>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeReadingModal()">Close</button>
+                <button class="btn btn-prayer" onclick="shareReading()">📤 Share</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <span class="nav-icon">🏠</span>
+            <span>Home</span>
+        </a>
+        <a href="schedule.html" class="nav-item">
+            <span class="nav-icon">📅</span>
+            <span>Schedule</span>
+        </a>
+        <a href="opportunities.html" class="nav-item">
+            <span class="nav-icon">🔍</span>
+            <span>Find</span>
+        </a>
+        <a href="prayer-wall.html" class="nav-item">
+            <span class="nav-icon">🙏</span>
+            <span>Prayer</span>
+        </a>
+        <a href="more.html" class="nav-item">
+            <span class="nav-icon">⚙️</span>
+            <span>More</span>
+        </a>
+    </nav>
+
+    <script src="app.js"></script>
+    <script>
+        function openReading(passage) {
+            document.getElementById('readingTitle').textContent = passage;
+            document.getElementById('readingModal').classList.add('active');
+        }
+
+        function closeReadingModal() {
+            document.getElementById('readingModal').classList.remove('active');
+        }
+
+        function openStudyGuide() {
+            alert('📝 Study Guide: Luke 19:1-10\n\nKey Themes:\n• Seeking Jesus despite obstacles\n• Jesus' compassion for outcasts\n• Transformation through encounter\n• Salvation and restoration\n\nDiscussion Questions:\n1. What obstacles did Zacchaeus overcome?\n2. How did Jesus respond to criticism?\n3. What changed in Zacchaeus\' life?\n\n(Full guide coming soon!)');
+        }
+
+        function shareReading() {
+            alert('📤 Share this reading with:\n\n• Team Chat\n• Prayer Wall\n• Direct Message\n• Copy Link\n\n(Sharing feature coming soon!)');
+        }
+
+        function continueReading() {
+            alert('📖 Continue Reading: Gospel of John\n\nDay 18: John 9:1-41\n"Jesus Heals a Man Born Blind"\n\n(Opening reading plan...)');
+        }
+
+        function browsePlans() {
+            alert('📚 Reading Plans Available:\n\n• Gospel of Matthew (40 days)\n• Psalms of Praise (30 days)\n• Romans Study (28 days)\n• Proverbs Wisdom (31 days)\n• The Parables (14 days)\n\n(Browse feature coming soon!)');
+        }
+
+        function viewAllNotes() {
+            alert('📝 Your Study Notes (12 total)\n\nMost Recent:\n• John 3:16 (2 days ago)\n• Psalm 23 (1 week ago)\n• Matthew 5:14-16 (2 weeks ago)\n\n(Notes library coming soon!)');
+        }
+
+        function browseGroups() {
+            alert('👥 Study Groups at Christine Church:\n\n• Men\'s Morning Study (Tuesdays 6 AM)\n• Women\'s Bible Study (Thursdays 10 AM)\n• Young Adults (Wednesdays 7 PM) ✓ Joined\n• Senior Saints (Fridays 2 PM)\n\n(Group browser coming soon!)');
+        }
+
+        function addNote() {
+            alert('📝 Add Personal Note\n\n(Note editor coming soon! You\'ll be able to:\n• Highlight verses\n• Write reflections\n• Tag themes\n• Share with groups)');
+        }
+
+        function closeModal(event) {
+            if (event.target.classList.contains('modal-overlay')) {
+                event.target.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>

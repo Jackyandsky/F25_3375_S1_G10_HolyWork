@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HolyWork - My Profile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Header -->
+    <div class="top-header">
+        <button class="header-btn" onclick="history.back()">←</button>
+        <h1 class="header-title">My Profile</h1>
+        <button class="header-btn" onclick="editProfile()">✏️</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="screen" style="padding-top: 16px;">
+        <div class="container">
+            <!-- Profile Header -->
+            <div class="card" style="text-align: center; margin-bottom: 24px;">
+                <div class="prayer-avatar" style="width: 100px; height: 100px; font-size: 40px; margin: 0 auto 16px; background: linear-gradient(135deg, var(--primary-blue-500), var(--primary-blue-600));">
+                    RM
+                </div>
+                <h2 style="margin-bottom: 4px;">Robert Mitchell</h2>
+                <p class="text-small" style="margin-bottom: 4px; color: var(--gray-600);">robert.mitchell@email.com</p>
+                <p class="text-small" style="margin-bottom: 16px; color: var(--gray-600);">📱 (555) 123-4567</p>
+
+                <div class="badge" style="background-color: var(--success-green); color: white; margin-bottom: 16px;">
+                    ✓ Active Volunteer
+                </div>
+
+                <button class="btn btn-secondary" onclick="editProfile()">
+                    Edit Profile
+                </button>
+            </div>
+
+            <!-- Stats Summary -->
+            <div class="section">
+                <h2 class="section-title">Service Stats</h2>
+
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 16px;">
+                    <div class="card" style="text-align: center; padding: 16px;">
+                        <div style="font-size: 28px; font-weight: 700; color: var(--primary-blue-500);">47</div>
+                        <div class="text-small" style="color: var(--gray-600);">Hours Served</div>
+                    </div>
+                    <div class="card" style="text-align: center; padding: 16px;">
+                        <div style="font-size: 28px; font-weight: 700; color: var(--success-green);">3</div>
+                        <div class="text-small" style="color: var(--gray-600);">Teams</div>
+                    </div>
+                    <div class="card" style="text-align: center; padding: 16px;">
+                        <div style="font-size: 28px; font-weight: 700; color: var(--warning-amber);">12</div>
+                        <div class="text-small" style="color: var(--gray-600);">Months Active</div>
+                    </div>
+                </div>
+
+                <div class="card" style="background: linear-gradient(135deg, var(--primary-blue-500), var(--prayer-purple)); color: white; text-align: center;">
+                    <h3 style="margin: 0 0 8px 0; font-size: 18px;">🏆 Achievement Unlocked</h3>
+                    <p style="margin: 0; opacity: 0.9;">Faithful Servant - 40+ hours served</p>
+                </div>
+            </div>
+
+            <!-- Church Affiliation -->
+            <div class="section">
+                <h2 class="section-title">Church Affiliation</h2>
+
+                <div class="card">
+                    <div style="display: flex; gap: 16px; align-items: center;">
+                        <div style="width: 56px; height: 56px; border-radius: 8px; background-color: var(--primary-blue-500); display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0;">
+                            ⛪
+                        </div>
+                        <div style="flex: 1;">
+                            <h3 style="margin: 0 0 4px 0; font-size: 16px;">Christine Church</h3>
+                            <p class="text-small" style="margin: 0; color: var(--gray-600);">Member since January 2024</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- My Teams -->
+            <div class="section">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                    <h2 class="section-title" style="margin: 0;">My Teams</h2>
+                    <button class="btn btn-secondary" style="font-size: 12px; padding: 6px 12px;" onclick="window.location.href='my-teams.html'">
+                        View All
+                    </button>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                    <div class="card" style="cursor: pointer;" onclick="window.location.href='my-teams.html'">
+                        <div style="display: flex; gap: 12px; align-items: center;">
+                            <div style="width: 40px; height: 40px; border-radius: 8px; background-color: var(--primary-blue-500); display: flex; align-items: center; justify-content: center; font-size: 20px;">☕</div>
+                            <div style="flex: 1;">
+                                <strong style="font-size: 14px;">Hospitality Team</strong>
+                                <p class="text-tiny" style="margin: 4px 0 0 0; color: var(--gray-600);">5 members • 12 events</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="cursor: pointer;" onclick="window.location.href='my-teams.html'">
+                        <div style="display: flex; gap: 12px; align-items: center;">
+                            <div style="width: 40px; height: 40px; border-radius: 8px; background-color: var(--success-green); display: flex; align-items: center; justify-content: center; font-size: 20px;">🔧</div>
+                            <div style="flex: 1;">
+                                <strong style="font-size: 14px;">Set-up Team</strong>
+                                <p class="text-tiny" style="margin: 4px 0 0 0; color: var(--gray-600);">8 members • 8 events</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="cursor: pointer;" onclick="window.location.href='my-teams.html'">
+                        <div style="display: flex; gap: 12px; align-items: center;">
+                            <div style="width: 40px; height: 40px; border-radius: 8px; background-color: var(--prayer-purple); display: flex; align-items: center; justify-content: center; font-size: 20px;">🎵</div>
+                            <div style="flex: 1;">
+                                <strong style="font-size: 14px;">Music Team</strong>
+                                <p class="text-tiny" style="margin: 4px 0 0 0; color: var(--gray-600);">12 members • 6 events</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Preferences -->
+            <div class="section">
+                <h2 class="section-title">Preferences</h2>
+
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--gray-200);">
+                        <div>
+                            <strong style="font-size: 14px;">Email Notifications</strong>
+                            <p class="text-tiny" style="margin: 4px 0 0 0; color: var(--gray-600);">Receive updates via email</p>
+                        </div>
+                        <label style="position: relative; display: inline-block; width: 48px; height: 28px;">
+                            <input type="checkbox" checked style="opacity: 0; width: 0; height: 0;">
+                            <span style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: var(--success-green); border-radius: 28px; transition: .4s;"></span>
+                        </label>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--gray-200);">
+                        <div>
+                            <strong style="font-size: 14px;">Push Notifications</strong>
+                            <p class="text-tiny" style="margin: 4px 0 0 0; color: var(--gray-600);">Get notified on your device</p>
+                        </div>
+                        <label style="position: relative; display: inline-block; width: 48px; height: 28px;">
+                            <input type="checkbox" checked style="opacity: 0; width: 0; height: 0;">
+                            <span style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: var(--success-green); border-radius: 28px; transition: .4s;"></span>
+                        </label>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0;">
+                        <div>
+                            <strong style="font-size: 14px;">Prayer Wall Updates</strong>
+                            <p class="text-tiny" style="margin: 4px 0 0 0; color: var(--gray-600);">New prayer requests</p>
+                        </div>
+                        <label style="position: relative; display: inline-block; width: 48px; height: 28px;">
+                            <input type="checkbox" checked style="opacity: 0; width: 0; height: 0;">
+                            <span style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: var(--success-green); border-radius: 28px; transition: .4s;"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Account Actions -->
+            <div class="section">
+                <button class="btn btn-secondary" style="width: 100%; margin-bottom: 8px;" onclick="window.location.href='settings.html'">
+                    ⚙️ Settings
+                </button>
+                <button class="btn" style="background-color: var(--error-red); color: white; width: 100%;" onclick="confirmLogout()">
+                    🚪 Log Out
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Profile Modal -->
+    <div id="editModal" class="modal-overlay" onclick="closeModal(event)">
+        <div class="modal" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h2 class="modal-title">Edit Profile</h2>
+            </div>
+            <div class="modal-body">
+                <form id="profileForm">
+                    <div class="form-group">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-input" value="Robert Mitchell" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-input" value="robert.mitchell@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Phone</label>
+                        <input type="tel" class="form-input" value="(555) 123-4567">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Church</label>
+                        <select class="form-select">
+                            <option selected>Christine Church</option>
+                            <option>Grace Community Church</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Bio (Optional)</label>
+                        <textarea class="form-textarea" rows="3" placeholder="Tell us about yourself...">Love serving my community and helping others discover their gifts!</textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeEditModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="saveProfile()">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <span class="nav-icon">🏠</span>
+            <span>Home</span>
+        </a>
+        <a href="schedule.html" class="nav-item">
+            <span class="nav-icon">📅</span>
+            <span>Schedule</span>
+        </a>
+        <a href="opportunities.html" class="nav-item">
+            <span class="nav-icon">🔍</span>
+            <span>Find</span>
+        </a>
+        <a href="prayer-wall.html" class="nav-item">
+            <span class="nav-icon">🙏</span>
+            <span>Prayer</span>
+        </a>
+        <a href="more.html" class="nav-item active">
+            <span class="nav-icon">⚙️</span>
+            <span>More</span>
+        </a>
+    </nav>
+
+    <script src="app.js"></script>
+    <script>
+        function editProfile() {
+            document.getElementById('editModal').classList.add('active');
+        }
+
+        function closeEditModal() {
+            document.getElementById('editModal').classList.remove('active');
+        }
+
+        function saveProfile() {
+            alert('✓ Profile updated successfully!');
+            closeEditModal();
+        }
+
+        function confirmLogout() {
+            if (confirm('Are you sure you want to log out?')) {
+                alert('You have been logged out. See you next time!');
+                // In a real app, this would clear session and redirect to login
+            }
+        }
+
+        function closeModal(event) {
+            if (event.target.classList.contains('modal-overlay')) {
+                event.target.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>

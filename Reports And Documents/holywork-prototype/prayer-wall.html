@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HolyWork - Prayer Wall</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Header -->
+    <div class="top-header">
+        <button class="header-btn" onclick="history.back()">←</button>
+        <h1 class="header-title">Prayer Wall</h1>
+        <button class="header-btn">🔍</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="screen" style="padding-top: 16px;">
+        <div class="container">
+            <!-- Filter Chips -->
+            <div class="filter-chips">
+                <div class="chip active">All</div>
+                <div class="chip">My Church</div>
+                <div class="chip">My Teams</div>
+                <div class="chip">Following</div>
+            </div>
+
+            <!-- Prayer Requests -->
+            <div class="section">
+                <!-- Prayer Request 1 -->
+                <div class="prayer-card">
+                    <div class="prayer-header">
+                        <div class="prayer-avatar">SK</div>
+                        <div style="flex: 1;">
+                            <div class="prayer-author">Sarah Kim</div>
+                            <div class="prayer-time">2 hours ago</div>
+                        </div>
+                    </div>
+                    <div class="privacy-badge privacy-church-wide">
+                        🌍 Church-wide
+                    </div>
+                    <p>"Pray for healing for my father who is recovering from surgery. He's doing better but still needs strength and recovery. Thank you for your prayers! 🙏"</p>
+                    <div class="prayer-reactions">
+                        <button class="reaction-btn active" onclick="togglePraying(this)">
+                            🙏 47 Praying
+                        </button>
+                        <button class="reaction-btn">
+                            💬 5 Comments
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Prayer Request 2 -->
+                <div class="prayer-card">
+                    <div class="prayer-header">
+                        <div class="prayer-avatar" style="background-color: var(--success-green);">JR</div>
+                        <div style="flex: 1;">
+                            <div class="prayer-author">James Rodriguez</div>
+                            <div class="prayer-time">5 hours ago</div>
+                        </div>
+                    </div>
+                    <div class="privacy-badge privacy-team">
+                        👥 Music Team only
+                    </div>
+                    <p>"Grateful for our amazing worship team! Sunday's service was powerful. Praise God for the way He moves through music. 🎵"</p>
+                    <div class="prayer-reactions">
+                        <button class="reaction-btn" onclick="togglePraying(this)">
+                            🙏 12 Praying
+                        </button>
+                        <button class="reaction-btn">
+                            💬 3 Comments
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Prayer Request 3 -->
+                <div class="prayer-card">
+                    <div class="prayer-header">
+                        <div class="prayer-avatar" style="background-color: var(--warning-amber);">ET</div>
+                        <div style="flex: 1;">
+                            <div class="prayer-author">Emily Tran</div>
+                            <div class="prayer-time">1 day ago</div>
+                        </div>
+                    </div>
+                    <div class="privacy-badge privacy-church-wide">
+                        🌍 Church-wide
+                    </div>
+                    <p>"Pray for courage for my social work placement interviews next week! I'm really nervous but trusting God's plan. 😊🙏"</p>
+                    <div class="prayer-reactions">
+                        <button class="reaction-btn" onclick="togglePraying(this)">
+                            🙏 35 Praying
+                        </button>
+                        <button class="reaction-btn">
+                            💬 12 Comments
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Prayer Request 4 -->
+                <div class="prayer-card">
+                    <div class="prayer-header">
+                        <div class="prayer-avatar" style="background-color: var(--primary-blue-500);">DC</div>
+                        <div style="flex: 1;">
+                            <div class="prayer-author">Pastor David Chen</div>
+                            <div class="prayer-time">1 day ago</div>
+                        </div>
+                    </div>
+                    <div class="privacy-badge privacy-church-wide">
+                        🌍 Church-wide
+                    </div>
+                    <p>"Praying for wisdom as we plan our Advent series. May God guide us to create meaningful worship experiences that draw people closer to Him."</p>
+                    <div class="prayer-reactions">
+                        <button class="reaction-btn" onclick="togglePraying(this)">
+                            🙏 28 Praying
+                        </button>
+                        <button class="reaction-btn">
+                            💬 8 Comments
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Prayer Request 5 -->
+                <div class="prayer-card">
+                    <div class="prayer-header">
+                        <div class="prayer-avatar" style="background-color: var(--error-red);">MW</div>
+                        <div style="flex: 1;">
+                            <div class="prayer-author">Margaret Wong</div>
+                            <div class="prayer-time">2 days ago</div>
+                        </div>
+                    </div>
+                    <div class="privacy-badge privacy-leadership">
+                        🔒 Leadership only
+                    </div>
+                    <p>"Pray for our volunteer coordination efforts. We're trying new systems and want to serve our teams well while honoring their time commitments."</p>
+                    <div class="prayer-reactions">
+                        <button class="reaction-btn" onclick="togglePraying(this)">
+                            🙏 8 Praying
+                        </button>
+                        <button class="reaction-btn">
+                            💬 2 Comments
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Action Button - Share Prayer -->
+    <button class="btn-icon" onclick="openPrayerModal()">+</button>
+
+    <!-- Create Prayer Request Modal -->
+    <div id="prayerModal" class="modal-overlay" onclick="closeModal(event)">
+        <div class="modal" onclick="event.stopPropagation()" style="max-width: 500px;">
+            <div class="modal-header">
+                <h2 class="modal-title">Share Prayer Request</h2>
+            </div>
+            <div class="modal-body">
+                <form id="prayerForm">
+                    <div class="form-group">
+                        <label class="form-label">What's on your heart?</label>
+                        <textarea class="form-textarea" placeholder="Share your prayer request..." required></textarea>
+                        <p class="form-help">250 characters remaining</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Privacy Setting ⚠️</label>
+                        <select class="form-select" required>
+                            <option value="">Choose who can see this...</option>
+                            <option value="church-wide">🌍 Church-wide (All members)</option>
+                            <option value="team">👥 Team only (Select your team)</option>
+                            <option value="leadership">🔒 Leadership only (Pastors/Coordinators)</option>
+                            <option value="private">🔐 Private (Coordinators only - crisis situations)</option>
+                        </select>
+                        <p class="form-help">Choose carefully - this controls who can see your request</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Category Tags (optional)</label>
+                        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px;">
+                            <span class="chip">🙏 #Prayer</span>
+                            <span class="chip">💚 #Healing</span>
+                            <span class="chip">✨ #Gratitude</span>
+                            <span class="chip">🧭 #Guidance</span>
+                            <span class="chip">💪 #Courage</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                            <input type="checkbox" style="width: 20px; height: 20px;">
+                            <span style="font-size: 14px;">Post anonymously</span>
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closePrayerModal()">Cancel</button>
+                <button class="btn btn-prayer" onclick="submitPrayer()">Share Request</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Prayer Posted Success Modal -->
+    <div id="prayerSuccessModal" class="modal-overlay" onclick="closeModal(event)">
+        <div class="modal" onclick="event.stopPropagation()">
+            <div class="modal-body" style="text-align: center; padding: 40px 20px;">
+                <div style="font-size: 64px; margin-bottom: 16px;">🙏</div>
+                <h2 class="modal-title">Prayer Request Shared</h2>
+                <p style="font-size: 16px; color: var(--gray-600); margin-top: 16px;">
+                    Your prayer request has been shared with the church community.
+                </p>
+                <div style="margin-top: 24px; padding: 16px; background-color: var(--prayer-purple); color: white; border-radius: 8px;">
+                    <p style="margin: 0; font-size: 20px; font-weight: 600;">3 people</p>
+                    <p style="margin: 4px 0 0 0; font-size: 14px; opacity: 0.9;">are already praying 🙏</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" onclick="closePrayerSuccessModal()">Back to Prayer Wall</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <span class="nav-icon">🏠</span>
+            <span>Home</span>
+        </a>
+        <a href="schedule.html" class="nav-item">
+            <span class="nav-icon">📅</span>
+            <span>Schedule</span>
+        </a>
+        <a href="opportunities.html" class="nav-item">
+            <span class="nav-icon">🔍</span>
+            <span>Find</span>
+        </a>
+        <a href="prayer-wall.html" class="nav-item active">
+            <span class="nav-icon">🙏</span>
+            <span>Prayer</span>
+        </a>
+        <a href="more.html" class="nav-item">
+            <span class="nav-icon">⚙️</span>
+            <span>More</span>
+        </a>
+    </nav>
+
+    <script src="app.js"></script>
+    <script>
+        function togglePraying(button) {
+            button.classList.toggle('active');
+            const currentCount = parseInt(button.textContent.match(/\d+/)[0]);
+            if (button.classList.contains('active')) {
+                button.innerHTML = `🙏 ${currentCount + 1} Praying`;
+            } else {
+                button.innerHTML = `🙏 ${currentCount - 1} Praying`;
+            }
+        }
+
+        function openPrayerModal() {
+            document.getElementById('prayerModal').classList.add('active');
+        }
+
+        function closePrayerModal() {
+            document.getElementById('prayerModal').classList.remove('active');
+        }
+
+        function submitPrayer() {
+            closePrayerModal();
+            document.getElementById('prayerSuccessModal').classList.add('active');
+        }
+
+        function closePrayerSuccessModal() {
+            document.getElementById('prayerSuccessModal').classList.remove('active');
+        }
+
+        function closeModal(event) {
+            if (event.target.classList.contains('modal-overlay')) {
+                event.target.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>

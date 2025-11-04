@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HolyWork - Team Communication</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Header -->
+    <div class="top-header">
+        <button class="header-btn" onclick="history.back()">←</button>
+        <h1 class="header-title">Hospitality Team</h1>
+        <button class="header-btn">ℹ️</button>
+    </div>
+
+    <!-- Chat Messages -->
+    <div class="screen" style="padding-top: 16px; padding-bottom: 150px;">
+        <div class="container">
+            <!-- Date Separator -->
+            <div style="text-align: center; margin: 24px 0;">
+                <span style="background-color: var(--gray-200); padding: 4px 12px; border-radius: 12px; font-size: 12px; color: var(--gray-600);">
+                    Today
+                </span>
+            </div>
+
+            <!-- Message 1 -->
+            <div style="margin-bottom: 24px;">
+                <div style="display: flex; gap: 12px;">
+                    <div class="prayer-avatar" style="width: 36px; height: 36px; font-size: 14px; flex-shrink: 0; background-color: var(--gray-600);">MW</div>
+                    <div style="flex: 1;">
+                        <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px;">
+                            <strong style="font-size: 14px;">Margaret Wong</strong>
+                            <span style="font-size: 12px; color: var(--gray-400);">9:15 AM</span>
+                        </div>
+                        <div style="background-color: white; padding: 12px; border-radius: 12px; box-shadow: var(--shadow-sm);">
+                            <p style="margin: 0; font-size: 14px;">Good morning team! Just a reminder that we have communion setup this Sunday, so we'll need to arrive 15 minutes earlier than usual. 🍞</p>
+                        </div>
+                        <div style="margin-top: 4px; display: flex; gap: 12px;">
+                            <button style="background: none; border: none; font-size: 12px; color: var(--gray-400); cursor: pointer;">👍 3</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Message 2 -->
+            <div style="margin-bottom: 24px;">
+                <div style="display: flex; gap: 12px;">
+                    <div class="prayer-avatar" style="width: 36px; height: 36px; font-size: 14px; flex-shrink: 0;">SK</div>
+                    <div style="flex: 1;">
+                        <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px;">
+                            <strong style="font-size: 14px;">Sarah Kim</strong>
+                            <span style="font-size: 12px; color: var(--gray-400);">9:22 AM</span>
+                        </div>
+                        <div style="background-color: white; padding: 12px; border-radius: 12px; box-shadow: var(--shadow-sm);">
+                            <p style="margin: 0; font-size: 14px;">Thanks for the heads up Margaret! I can get there at 8:45. Should I bring extra napkins?</p>
+                        </div>
+                        <div style="margin-top: 4px; display: flex; gap: 12px;">
+                            <button style="background: none; border: none; font-size: 12px; color: var(--gray-400); cursor: pointer;">👍 2</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Message 3 -->
+            <div style="margin-bottom: 24px;">
+                <div style="display: flex; gap: 12px;">
+                    <div class="prayer-avatar" style="width: 36px; height: 36px; font-size: 14px; flex-shrink: 0; background-color: var(--gray-600);">MW</div>
+                    <div style="flex: 1;">
+                        <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px;">
+                            <strong style="font-size: 14px;">Margaret Wong</strong>
+                            <span style="font-size: 12px; color: var(--gray-400);">9:28 AM</span>
+                        </div>
+                        <div style="background-color: white; padding: 12px; border-radius: 12px; box-shadow: var(--shadow-sm);">
+                            <p style="margin: 0; font-size: 14px;">Yes please Sarah! That would be wonderful. 🙏</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Message 4 - User's message (right-aligned) -->
+            <div style="margin-bottom: 24px;">
+                <div style="display: flex; justify-content: flex-end;">
+                    <div style="max-width: 70%;">
+                        <div style="text-align: right; margin-bottom: 4px;">
+                            <span style="font-size: 12px; color: var(--gray-400);">9:35 AM</span>
+                        </div>
+                        <div style="background-color: var(--primary-blue-500); color: white; padding: 12px; border-radius: 12px;">
+                            <p style="margin: 0; font-size: 14px;">I'll be there at 8:45 too! Looking forward to serving with you all. 😊</p>
+                        </div>
+                        <div style="margin-top: 4px; display: flex; gap: 12px; justify-content: flex-end;">
+                            <button style="background: none; border: none; font-size: 12px; color: var(--gray-400); cursor: pointer;">👍 4</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Message 5 -->
+            <div style="margin-bottom: 24px;">
+                <div style="display: flex; gap: 12px;">
+                    <div class="prayer-avatar" style="width: 36px; height: 36px; font-size: 14px; flex-shrink: 0; background-color: var(--success-green);">JM</div>
+                    <div style="flex: 1;">
+                        <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px;">
+                            <strong style="font-size: 14px;">John Martinez</strong>
+                            <span style="font-size: 12px; color: var(--gray-400);">10:02 AM</span>
+                        </div>
+                        <div style="background-color: white; padding: 12px; border-radius: 12px; box-shadow: var(--shadow-sm);">
+                            <p style="margin: 0; font-size: 14px;">Great team! I'll handle the coffee setup. See everyone Sunday! ☕️</p>
+                        </div>
+                        <div style="margin-top: 4px; display: flex; gap: 12px;">
+                            <button style="background: none; border: none; font-size: 12px; color: var(--gray-400); cursor: pointer;">👍 5</button>
+                            <button style="background: none; border: none; font-size: 12px; color: var(--gray-400); cursor: pointer;">❤️ 2</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- File Share Example -->
+            <div style="margin-bottom: 24px;">
+                <div style="display: flex; gap: 12px;">
+                    <div class="prayer-avatar" style="width: 36px; height: 36px; font-size: 14px; flex-shrink: 0; background-color: var(--gray-600);">MW</div>
+                    <div style="flex: 1;">
+                        <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px;">
+                            <strong style="font-size: 14px;">Margaret Wong</strong>
+                            <span style="font-size: 12px; color: var(--gray-400);">10:15 AM</span>
+                        </div>
+                        <div style="background-color: white; padding: 12px; border-radius: 12px; box-shadow: var(--shadow-sm);">
+                            <p style="margin: 0 0 12px 0; font-size: 14px;">Here's the updated communion setup checklist 📋</p>
+                            <div style="background-color: var(--gray-100); padding: 12px; border-radius: 8px; display: flex; align-items: center; gap: 12px;">
+                                <span style="font-size: 24px;">📄</span>
+                                <div style="flex: 1;">
+                                    <div style="font-size: 14px; font-weight: 600;">Communion_Setup_Checklist.pdf</div>
+                                    <div style="font-size: 12px; color: var(--gray-600);">128 KB</div>
+                                </div>
+                                <button style="background: none; border: none; color: var(--primary-blue-500); cursor: pointer; font-size: 14px;">📥</button>
+                            </div>
+                        </div>
+                        <div style="margin-top: 4px; display: flex; gap: 12px;">
+                            <button style="background: none; border: none; font-size: 12px; color: var(--gray-400); cursor: pointer;">👍 3</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Message Input (Fixed at bottom) -->
+    <div style="position: fixed; bottom: 76px; left: 0; right: 0; background: white; border-top: 1px solid var(--gray-200); padding: 12px;">
+        <div class="container">
+            <div style="display: flex; gap: 8px; align-items: center;">
+                <button style="background: none; border: none; font-size: 24px; color: var(--gray-400); cursor: pointer;">📎</button>
+                <input type="text" placeholder="Type a message..." style="flex: 1; padding: 12px; border: 1px solid var(--gray-300); border-radius: 20px; font-size: 14px; font-family: var(--font-family);">
+                <button style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--primary-blue-500); color: white; border: none; font-size: 20px; cursor: pointer;">➤</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <span class="nav-icon">🏠</span>
+            <span>Home</span>
+        </a>
+        <a href="schedule.html" class="nav-item">
+            <span class="nav-icon">📅</span>
+            <span>Schedule</span>
+        </a>
+        <a href="opportunities.html" class="nav-item">
+            <span class="nav-icon">🔍</span>
+            <span>Find</span>
+        </a>
+        <a href="prayer-wall.html" class="nav-item">
+            <span class="nav-icon">🙏</span>
+            <span>Prayer</span>
+        </a>
+        <a href="more.html" class="nav-item">
+            <span class="nav-icon">⚙️</span>
+            <span>More</span>
+        </a>
+    </nav>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HolyWork - My Teams</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Header -->
+    <div class="top-header">
+        <button class="header-btn" onclick="history.back()">←</button>
+        <h1 class="header-title">My Teams</h1>
+        <button class="header-btn" onclick="browseTeams()">🔍</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="screen" style="padding-top: 16px;">
+        <div class="container">
+            <!-- Summary Card -->
+            <div class="card" style="text-align: center; margin-bottom: 24px;">
+                <h3 style="margin: 0 0 8px 0; color: var(--primary-blue-500); font-size: 32px;">3</h3>
+                <p class="text-small" style="margin: 0;">Active Teams</p>
+            </div>
+
+            <!-- Teams List -->
+            <div class="section">
+                <!-- Team 1 - Hospitality Team -->
+                <div class="card" style="margin-bottom: 16px;">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 12px;">
+                        <div style="flex: 1;">
+                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                                <h3 style="margin: 0; font-size: 18px;">Hospitality Team</h3>
+                                <span class="badge" style="background-color: var(--primary-blue-500); color: white; font-size: 10px;">Active</span>
+                            </div>
+                            <p class="text-small" style="color: var(--gray-600); margin: 0;">
+                                Create welcoming environment for Sunday services
+                            </p>
+                        </div>
+                        <div class="prayer-avatar" style="width: 48px; height: 48px; font-size: 24px; background-color: var(--primary-blue-500);">
+                            ☕
+                        </div>
+                    </div>
+
+                    <!-- Team Stats -->
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 16px 0; padding: 16px; background-color: var(--gray-100); border-radius: 8px;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 20px; font-weight: 700; color: var(--primary-blue-500);">5</div>
+                            <div class="text-tiny" style="color: var(--gray-600);">Members</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 20px; font-weight: 700; color: var(--success-green);">12</div>
+                            <div class="text-tiny" style="color: var(--gray-600);">Events</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 20px; font-weight: 700; color: var(--warning-amber);">MW</div>
+                            <div class="text-tiny" style="color: var(--gray-600);">Coordinator</div>
+                        </div>
+                    </div>
+
+                    <!-- Team Members -->
+                    <div style="margin-bottom: 16px;">
+                        <h4 style="font-size: 14px; margin: 0 0 8px 0;">Team Members</h4>
+                        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                            <div class="prayer-avatar" style="width: 40px; height: 40px; font-size: 14px; background-color: var(--gray-600);">MW</div>
+                            <div class="prayer-avatar" style="width: 40px; height: 40px; font-size: 14px;">SK</div>
+                            <div class="prayer-avatar" style="width: 40px; height: 40px; font-size: 14px; background-color: var(--success-green);">JM</div>
+                            <div class="prayer-avatar" style="width: 40px; height: 40px; font-size: 14px; background-color: var(--warning-amber);">GT</div>
+                            <div class="prayer-avatar" style="width: 40px; height: 40px; font-size: 14px; background-color: var(--info-blue);">RM</div>
+                        </div>
+                    </div>
+
+                    <!-- Next Service -->
+                    <div style="padding: 12px; background-color: var(--primary-blue-50); border-radius: 8px; margin-bottom: 12px;">
+                        <p class="text-small" style="margin: 0; color: var(--primary-blue-700);">
+                            <strong>Next Service:</strong> Sunday, Nov 3 • 9:00 AM - 11:00 AM
+                        </p>
+                    </div>
+
+                    <!-- Actions -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                        <button class="btn btn-primary" onclick="window.location.href='team-chat.html'">
+                            💬 Team Chat
+                        </button>
+                        <button class="btn btn-secondary" onclick="viewTeamDetails('hospitality')">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Team 2 - Set-up Team -->
+                <div class="card" style="margin-bottom: 16px;">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 12px;">
+                        <div style="flex: 1;">
+                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                                <h3 style="margin: 0; font-size: 18px;">Set-up Team</h3>
+                                <span class="badge" style="background-color: var(--success-green); color: white; font-size: 10px;">Active</span>
+                            </div>
+                            <p class="text-small" style="color: var(--gray-600); margin: 0;">
+                                Prepare sanctuary and equipment for services
+                            </p>
+                        </div>
+                        <div class="prayer-avatar" style="width: 48px; height: 48px; font-size: 24px; background-color: var(--success-green);">
+                            🔧
+                        </div>
+                    </div>
+
+                    <!-- Team Stats -->
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 16px 0; padding: 16px; background-color: var(--gray-100); border-radius: 8px;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 20px; font-weight: 700; color: var(--primary-blue-500);">8</div>
+                            <div class="text-tiny" style="color: var(--gray-600);">Members</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 20px; font-weight: 700; color: var(--success-green);">8</div>
+                            <div class="text-tiny" style="color: var(--gray-600);">Events</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 20px; font-weight: 700; color: var(--warning-amber);">DC</div>
+                            <div class="text-tiny" style="color: var(--gray-600);">Coordinator</div>
+                        </div>
+                    </div>
+
+                    <!-- Team Members -->
+                    <div style="margin-bottom: 16px;">
+                        <h4 style="font-size: 14px; margin: 0 0 8px 0;">Team Members</h4>
+                        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                            <div class="prayer-avatar" style="width: 40px; height: 40px; font-size: 14px; background-color: var(--primary-blue-500);">DC</div>
+                            <div class="prayer-avatar" style="width: 40px; height: 40px; font-size: 14px;">SK</div>
+                            <div class="prayer-avatar" style="width: 40px; height: 40px; font-size: 14px; background-color: var(--success-green);">JR</div>
+                            <div class="prayer-avatar" style="width: 40px; height: 40px; font-size: 14px; background-color: var(--warning-amber);">ET</div>
+                            <div class="prayer-avatar" style="width: 40px; height: 40px; font-size: 14px; background-color: var(--info-blue);">RM</div>
+                            <div style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--gray-300); display: flex; align-items: center; justify-content: center; font-size: 12px; color: var(--gray-600);">+3</div>
+                        </div>
+                    </div>
+
+                    <!-- Next Service -->
+                    <div style="padding: 12px; background-color: var(--success-green); color: white; border-radius: 8px; margin-bottom: 12px;">
+                        <p class="text-small" style="margin: 0;">
+                            <strong>Next Service:</strong> Sunday, Nov 10 • 8:00 AM - 9:00 AM
+                        </p>
+                    </div>
+
+                    <!-- Actions -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                        <button class="btn btn-primary" onclick="window.location.href='team-chat.html'">
+                            💬 Team Chat
+                        </button>
+                        <button class="btn btn-secondary" onclick="viewTeamDetails('setup')">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Team 3 - Music Team -->
+                <div class="card" style="margin-bottom: 16px;">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 12px;">
+                        <div style="flex: 1;">
+                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                                <h3 style="margin: 0; font-size: 18px;">Music Team</h3>
+                                <span class="badge" style="background-color: var(--prayer-purple); color: white; font-size: 10px;">Active</span>
+                            </div>
+                            <p class="text-small" style="color: var(--gray-600); margin: 0;">
+                                Lead worship through music and song
+                            </p>
+                        </div>
+                        <div class="prayer-avatar" style="width: 48px; height: 48px; font-size: 24px; background-color: var(--prayer-purple);">
+                            🎵
+                        </div>
+                    </div>
+
+                    <!-- Team Stats -->
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 16px 0; padding: 16px; background-color: var(--gray-100); border-radius: 8px;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 20px; font-weight: 700; color: var(--primary-blue-500);">12</div>
+                            <div class="text-tiny" style="color: var(--gray-600);">Members</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 20px; font-weight: 700; color: var(--success-green);">6</div>
+                            <div class="text-tiny" style="color: var(--gray-600);">Events</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 20px; font-weight: 700; color: var(--warning-amber);">JR</div>
+                            <div class="text-tiny" style="color: var(--gray-600);">Coordinator</div>
+                        </div>
+                    </div>
+
+                    <!-- Team Members -->
+                    <div style="margin-bottom: 16px;">
+                        <h4 style="font-size: 14px; margin: 0 0 8px 0;">Team Members</h4>
+                        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                            <div class="prayer-avatar" style="width: 40px; height: 40px; font-size: 14px; background-color: var(--success-green);">JR</div>
+                            <div class="prayer-avatar" style="width: 40px; height: 40px; font-size: 14px;">SK</div>
+                            <div class="prayer-avatar" style="width: 40px; height: 40px; font-size: 14px; background-color: var(--warning-amber);">ET</div>
+                            <div class="prayer-avatar" style="width: 40px; height: 40px; font-size: 14px; background-color: var(--primary-blue-500);">DC</div>
+                            <div class="prayer-avatar" style="width: 40px; height: 40px; font-size: 14px; background-color: var(--info-blue);">RM</div>
+                            <div style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--gray-300); display: flex; align-items: center; justify-content: center; font-size: 12px; color: var(--gray-600);">+7</div>
+                        </div>
+                    </div>
+
+                    <!-- Next Practice -->
+                    <div style="padding: 12px; background-color: var(--prayer-purple); color: white; border-radius: 8px; margin-bottom: 12px;">
+                        <p class="text-small" style="margin: 0;">
+                            <strong>Next Practice:</strong> Thursday, Nov 2 • 7:00 PM - 9:00 PM
+                        </p>
+                    </div>
+
+                    <!-- Actions -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                        <button class="btn btn-primary" onclick="window.location.href='team-chat.html'">
+                            💬 Team Chat
+                        </button>
+                        <button class="btn btn-secondary" onclick="viewTeamDetails('music')">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Browse More Teams -->
+            <div class="card" style="text-align: center; background: linear-gradient(135deg, var(--primary-blue-500), var(--prayer-purple)); color: white; cursor: pointer;" onclick="browseTeams()">
+                <h3 style="margin: 0 0 8px 0; font-size: 20px;">Looking for more ways to serve?</h3>
+                <p style="margin: 0 0 16px 0; opacity: 0.9;">Explore other teams and find your place!</p>
+                <button class="btn" style="background-color: white; color: var(--primary-blue-500);">
+                    🔍 Browse All Teams
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team Details Modal -->
+    <div id="teamModal" class="modal-overlay" onclick="closeModal(event)">
+        <div class="modal" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h2 class="modal-title">Hospitality Team</h2>
+            </div>
+            <div class="modal-body">
+                <div style="text-align: center; margin-bottom: 24px;">
+                    <div class="prayer-avatar" style="width: 64px; height: 64px; font-size: 32px; margin: 0 auto; background-color: var(--primary-blue-500);">
+                        ☕
+                    </div>
+                </div>
+
+                <h4 style="font-size: 16px; margin: 0 0 8px 0;">Mission</h4>
+                <p style="margin: 0 0 16px 0; color: var(--gray-700);">
+                    Create a warm, welcoming environment for Sunday services by greeting guests, serving refreshments, and ensuring everyone feels at home in our church community.
+                </p>
+
+                <h4 style="font-size: 16px; margin: 16px 0 8px 0;">Responsibilities</h4>
+                <ul style="margin: 0 0 16px 0; padding-left: 20px; color: var(--gray-700);">
+                    <li>Greet guests at entrance</li>
+                    <li>Set up coffee and refreshments</li>
+                    <li>Maintain hospitality area</li>
+                    <li>Clean up after service</li>
+                </ul>
+
+                <h4 style="font-size: 16px; margin: 16px 0 8px 0;">Coordinator</h4>
+                <div style="display: flex; gap: 12px; align-items: center; padding: 12px; background-color: var(--gray-100); border-radius: 8px;">
+                    <div class="prayer-avatar" style="width: 48px; height: 48px; font-size: 16px; background-color: var(--gray-600);">MW</div>
+                    <div>
+                        <strong>Margaret Wong</strong>
+                        <p class="text-small" style="margin: 4px 0 0 0;">Coordinator since 2023</p>
+                    </div>
+                </div>
+
+                <h4 style="font-size: 16px; margin: 16px 0 8px 0;">Team Stats</h4>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;">
+                    <div style="text-align: center; padding: 16px; background-color: var(--primary-blue-50); border-radius: 8px;">
+                        <div style="font-size: 24px; font-weight: 700; color: var(--primary-blue-500);">24</div>
+                        <div class="text-small">Hours Served</div>
+                    </div>
+                    <div style="text-align: center; padding: 16px; background-color: var(--success-green); color: white; border-radius: 8px;">
+                        <div style="font-size: 24px; font-weight: 700;">12</div>
+                        <div class="text-small">Services</div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeTeamModal()">Close</button>
+                <button class="btn" style="background-color: var(--error-red); color: white;" onclick="confirmLeaveTeam()">Leave Team</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <span class="nav-icon">🏠</span>
+            <span>Home</span>
+        </a>
+        <a href="schedule.html" class="nav-item">
+            <span class="nav-icon">📅</span>
+            <span>Schedule</span>
+        </a>
+        <a href="opportunities.html" class="nav-item">
+            <span class="nav-icon">🔍</span>
+            <span>Find</span>
+        </a>
+        <a href="prayer-wall.html" class="nav-item">
+            <span class="nav-icon">🙏</span>
+            <span>Prayer</span>
+        </a>
+        <a href="more.html" class="nav-item">
+            <span class="nav-icon">⚙️</span>
+            <span>More</span>
+        </a>
+    </nav>
+
+    <script src="app.js"></script>
+    <script>
+        function viewTeamDetails(team) {
+            document.getElementById('teamModal').classList.add('active');
+        }
+
+        function closeTeamModal() {
+            document.getElementById('teamModal').classList.remove('active');
+        }
+
+        function confirmLeaveTeam() {
+            if (confirm('Are you sure you want to leave this team? You can always rejoin later.')) {
+                alert('You have left the Hospitality Team. We hope to serve with you again soon!');
+                closeTeamModal();
+            }
+        }
+
+        function browseTeams() {
+            alert('Browse Teams feature coming soon! You\'ll be able to explore all teams and request to join.');
+        }
+
+        function closeModal(event) {
+            if (event.target.classList.contains('modal-overlay')) {
+                event.target.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>

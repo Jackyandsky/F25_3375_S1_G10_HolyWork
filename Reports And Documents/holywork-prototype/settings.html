@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HolyWork - Settings</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Header -->
+    <div class="top-header">
+        <button class="header-btn" onclick="history.back()">←</button>
+        <h1 class="header-title">Settings</h1>
+        <button class="header-btn"></button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="screen" style="padding-top: 16px;">
+        <div class="container">
+            <!-- Notifications Section -->
+            <div class="section">
+                <h2 class="section-title">🔔 Notifications</h2>
+
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--gray-200);">
+                        <div>
+                            <strong style="font-size: 14px;">Push Notifications</strong>
+                            <p class="text-tiny" style="margin: 4px 0 0 0; color: var(--gray-600);">Get notified on your device</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked onchange="toggleSetting(this, 'Push Notifications')">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--gray-200);">
+                        <div>
+                            <strong style="font-size: 14px;">Email Notifications</strong>
+                            <p class="text-tiny" style="margin: 4px 0 0 0; color: var(--gray-600);">Receive updates via email</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked onchange="toggleSetting(this, 'Email Notifications')">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--gray-200);">
+                        <div>
+                            <strong style="font-size: 14px;">Schedule Reminders</strong>
+                            <p class="text-tiny" style="margin: 4px 0 0 0; color: var(--gray-600);">24h & 72h before service</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked onchange="toggleSetting(this, 'Schedule Reminders')">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--gray-200);">
+                        <div>
+                            <strong style="font-size: 14px;">Prayer Wall Updates</strong>
+                            <p class="text-tiny" style="margin: 4px 0 0 0; color: var(--gray-600);">New prayer requests</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked onchange="toggleSetting(this, 'Prayer Wall Updates')">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--gray-200);">
+                        <div>
+                            <strong style="font-size: 14px;">Team Messages</strong>
+                            <p class="text-tiny" style="margin: 4px 0 0 0; color: var(--gray-600);">New messages in team chats</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked onchange="toggleSetting(this, 'Team Messages')">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0;">
+                        <div>
+                            <strong style="font-size: 14px;">Event Invitations</strong>
+                            <p class="text-tiny" style="margin: 4px 0 0 0; color: var(--gray-600);">When you're invited to events</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked onchange="toggleSetting(this, 'Event Invitations')">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Privacy Section -->
+            <div class="section">
+                <h2 class="section-title">🔒 Privacy</h2>
+
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--gray-200);">
+                        <div>
+                            <strong style="font-size: 14px;">Show Profile to Others</strong>
+                            <p class="text-tiny" style="margin: 4px 0 0 0; color: var(--gray-600);">Let others see your profile</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked onchange="toggleSetting(this, 'Show Profile')">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--gray-200);">
+                        <div>
+                            <strong style="font-size: 14px;">Show Service Hours</strong>
+                            <p class="text-tiny" style="margin: 4px 0 0 0; color: var(--gray-600);">Display your volunteer hours</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked onchange="toggleSetting(this, 'Show Service Hours')">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0;">
+                        <div>
+                            <strong style="font-size: 14px;">Allow Direct Messages</strong>
+                            <p class="text-tiny" style="margin: 4px 0 0 0; color: var(--gray-600);">Anyone can message you</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked onchange="toggleSetting(this, 'Allow Direct Messages')">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Display Section -->
+            <div class="section">
+                <h2 class="section-title">🎨 Display</h2>
+
+                <div class="card">
+                    <div style="padding: 12px 0; border-bottom: 1px solid var(--gray-200);">
+                        <strong style="font-size: 14px;">Theme</strong>
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 12px;">
+                            <button class="btn" style="background-color: var(--primary-blue-500); color: white;" onclick="selectTheme('light')">
+                                ☀️ Light
+                            </button>
+                            <button class="btn btn-secondary" onclick="selectTheme('dark')">
+                                🌙 Dark
+                            </button>
+                            <button class="btn btn-secondary" onclick="selectTheme('auto')">
+                                🔄 Auto
+                            </button>
+                        </div>
+                    </div>
+
+                    <div style="padding: 12px 0; border-bottom: 1px solid var(--gray-200);">
+                        <strong style="font-size: 14px;">Font Size</strong>
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 12px;">
+                            <button class="btn btn-secondary" onclick="selectFontSize('small')">
+                                A
+                            </button>
+                            <button class="btn" style="background-color: var(--primary-blue-500); color: white;" onclick="selectFontSize('medium')">
+                                <strong>A</strong>
+                            </button>
+                            <button class="btn btn-secondary" onclick="selectFontSize('large')">
+                                <strong style="font-size: 18px;">A</strong>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0;">
+                        <div>
+                            <strong style="font-size: 14px;">Reduce Motion</strong>
+                            <p class="text-tiny" style="margin: 4px 0 0 0; color: var(--gray-600);">Minimize animations</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" onchange="toggleSetting(this, 'Reduce Motion')">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Language & Region -->
+            <div class="section">
+                <h2 class="section-title">🌍 Language & Region</h2>
+
+                <div class="card">
+                    <div style="padding: 12px 0; border-bottom: 1px solid var(--gray-200);">
+                        <label class="form-label">Language</label>
+                        <select class="form-select" onchange="changeLanguage(this)">
+                            <option selected>English</option>
+                            <option>Español</option>
+                            <option>中文 (Chinese)</option>
+                            <option>한국어 (Korean)</option>
+                            <option>Tagalog</option>
+                            <option>Français</option>
+                        </select>
+                    </div>
+
+                    <div style="padding: 12px 0;">
+                        <label class="form-label">Time Zone</label>
+                        <select class="form-select">
+                            <option selected>Pacific Time (PT)</option>
+                            <option>Mountain Time (MT)</option>
+                            <option>Central Time (CT)</option>
+                            <option>Eastern Time (ET)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data & Storage -->
+            <div class="section">
+                <h2 class="section-title">💾 Data & Storage</h2>
+
+                <div class="card" style="padding: 0;">
+                    <button onclick="clearCache()" style="width: 100%; padding: 16px; background: none; border: none; display: flex; align-items: center; justify-content: space-between; cursor: pointer; border-bottom: 1px solid var(--gray-200);">
+                        <div style="text-align: left;">
+                            <strong style="font-size: 14px;">Clear Cache</strong>
+                            <p class="text-tiny" style="margin: 4px 0 0 0; color: var(--gray-600);">Free up storage space</p>
+                        </div>
+                        <span style="color: var(--gray-400);">→</span>
+                    </button>
+
+                    <button onclick="downloadData()" style="width: 100%; padding: 16px; background: none; border: none; display: flex; align-items: center; justify-content: space-between; cursor: pointer; border-bottom: 1px solid var(--gray-200);">
+                        <div style="text-align: left;">
+                            <strong style="font-size: 14px;">Download My Data</strong>
+                            <p class="text-tiny" style="margin: 4px 0 0 0; color: var(--gray-600);">Export your information</p>
+                        </div>
+                        <span style="color: var(--gray-400);">→</span>
+                    </button>
+
+                    <button onclick="confirmDeleteAccount()" style="width: 100%; padding: 16px; background: none; border: none; display: flex; align-items: center; justify-content: space-between; cursor: pointer;">
+                        <div style="text-align: left;">
+                            <strong style="font-size: 14px; color: var(--error-red);">Delete Account</strong>
+                            <p class="text-tiny" style="margin: 4px 0 0 0; color: var(--gray-600);">Permanently delete your data</p>
+                        </div>
+                        <span style="color: var(--error-red);">→</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- About & Legal -->
+            <div class="section">
+                <h2 class="section-title">ℹ️ About & Legal</h2>
+
+                <div class="card" style="padding: 0;">
+                    <button onclick="viewAbout()" style="width: 100%; padding: 16px; background: none; border: none; display: flex; align-items: center; justify-content: space-between; cursor: pointer; border-bottom: 1px solid var(--gray-200);">
+                        <strong style="font-size: 14px;">About HolyWork</strong>
+                        <span style="color: var(--gray-400);">→</span>
+                    </button>
+
+                    <button onclick="viewTerms()" style="width: 100%; padding: 16px; background: none; border: none; display: flex; align-items: center; justify-content: space-between; cursor: pointer; border-bottom: 1px solid var(--gray-200);">
+                        <strong style="font-size: 14px;">Terms of Service</strong>
+                        <span style="color: var(--gray-400);">→</span>
+                    </button>
+
+                    <button onclick="viewPrivacy()" style="width: 100%; padding: 16px; background: none; border: none; display: flex; align-items: center; justify-content: space-between; cursor: pointer; border-bottom: 1px solid var(--gray-200);">
+                        <strong style="font-size: 14px;">Privacy Policy</strong>
+                        <span style="color: var(--gray-400);">→</span>
+                    </button>
+
+                    <button onclick="contactSupport()" style="width: 100%; padding: 16px; background: none; border: none; display: flex; align-items: center; justify-content: space-between; cursor: pointer;">
+                        <strong style="font-size: 14px;">Contact Support</strong>
+                        <span style="color: var(--gray-400);">→</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- App Version -->
+            <div style="text-align: center; margin: 32px 0; color: var(--gray-400);">
+                <p class="text-small">HolyWork v1.0.0</p>
+                <p class="text-tiny">© 2025 HolyWork. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <span class="nav-icon">🏠</span>
+            <span>Home</span>
+        </a>
+        <a href="schedule.html" class="nav-item">
+            <span class="nav-icon">📅</span>
+            <span>Schedule</span>
+        </a>
+        <a href="opportunities.html" class="nav-item">
+            <span class="nav-icon">🔍</span>
+            <span>Find</span>
+        </a>
+        <a href="prayer-wall.html" class="nav-item">
+            <span class="nav-icon">🙏</span>
+            <span>Prayer</span>
+        </a>
+        <a href="more.html" class="nav-item active">
+            <span class="nav-icon">⚙️</span>
+            <span>More</span>
+        </a>
+    </nav>
+
+    <script src="app.js"></script>
+    <script>
+        function toggleSetting(checkbox, settingName) {
+            const status = checkbox.checked ? 'enabled' : 'disabled';
+            console.log(`${settingName} ${status}`);
+        }
+
+        function selectTheme(theme) {
+            alert(`Theme changed to: ${theme}\n\nThis would apply the ${theme} theme to the app.`);
+        }
+
+        function selectFontSize(size) {
+            alert(`Font size changed to: ${size}\n\nThis would adjust all text sizes in the app.`);
+        }
+
+        function changeLanguage(select) {
+            const language = select.value;
+            alert(`Language changed to: ${language}\n\nThe app would now display in ${language}.`);
+        }
+
+        function clearCache() {
+            if (confirm('Clear app cache? This will free up storage but you may need to re-download some data.')) {
+                alert('✓ Cache cleared! Freed 42 MB of storage.');
+            }
+        }
+
+        function downloadData() {
+            alert('Your data export has been requested. You\'ll receive an email with a download link within 24 hours.');
+        }
+
+        function confirmDeleteAccount() {
+            if (confirm('⚠️ WARNING: This will permanently delete your account and all data.\n\nThis action cannot be undone. Are you sure?')) {
+                if (confirm('Please confirm one more time: Delete your account permanently?')) {
+                    alert('Your account deletion request has been submitted. You will receive a confirmation email.');
+                }
+            }
+        }
+
+        function viewAbout() {
+            alert('HolyWork v1.0.0\n\nA volunteer coordination platform built for faith communities.\n\nDeveloped with ❤️ for churches and faith-based organizations.');
+        }
+
+        function viewTerms() {
+            alert('Terms of Service\n\nThis would display the full terms of service document.');
+        }
+
+        function viewPrivacy() {
+            alert('Privacy Policy\n\nThis would display the full privacy policy document.');
+        }
+
+        function contactSupport() {
+            alert('Contact Support\n\nEmail: support@holywork.com\nPhone: 1-800-HOLY-WORK\n\nWe typically respond within 24 hours.');
+        }
+    </script>
+
+    <style>
+        /* Toggle Switch Styling */
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 48px;
+            height: 28px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--gray-300);
+            border-radius: 28px;
+            transition: .4s;
+        }
+
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            border-radius: 50%;
+            transition: .4s;
+        }
+
+        .toggle-switch input:checked + .toggle-slider {
+            background-color: var(--success-green);
+        }
+
+        .toggle-switch input:checked + .toggle-slider:before {
+            transform: translateX(20px);
+        }
+    </style>
+</body>
+</html>

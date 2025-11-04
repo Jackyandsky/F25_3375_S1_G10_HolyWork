@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HolyWork - Notifications</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Header -->
+    <div class="top-header">
+        <button class="header-btn" onclick="history.back()">←</button>
+        <h1 class="header-title">Notifications</h1>
+        <button class="header-btn" onclick="markAllRead()">✓</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="screen" style="padding-top: 16px;">
+        <div class="container">
+            <!-- Filter Chips -->
+            <div class="filter-chips">
+                <div class="chip active">All</div>
+                <div class="chip">Schedule</div>
+                <div class="chip">Prayer</div>
+                <div class="chip">Messages</div>
+                <div class="chip">Teams</div>
+            </div>
+
+            <!-- Notifications List -->
+            <div class="section">
+                <!-- Today -->
+                <div style="font-size: 14px; font-weight: 600; color: var(--gray-600); margin-bottom: 12px;">
+                    Today
+                </div>
+
+                <!-- Notification 1 - Unread -->
+                <div class="card" style="border-left: 4px solid var(--primary-blue-500); background-color: var(--primary-blue-50);">
+                    <div style="display: flex; gap: 12px;">
+                        <div class="prayer-avatar" style="width: 40px; height: 40px; font-size: 14px; flex-shrink: 0; background-color: var(--primary-blue-500);">
+                            📅
+                        </div>
+                        <div style="flex: 1;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 4px;">
+                                <h4 style="margin: 0; font-size: 15px;">Reminder: You're serving tomorrow</h4>
+                                <span class="text-tiny" style="color: var(--gray-400);">1h ago</span>
+                            </div>
+                            <p style="font-size: 14px; color: var(--gray-700); margin: 4px 0;">
+                                Hospitality Team • Sunday Nov 3, 9:00 AM
+                            </p>
+                            <div style="margin-top: 12px; display: flex; gap: 8px;">
+                                <button class="btn btn-primary" style="font-size: 13px; padding: 6px 16px; width: auto;" onclick="window.location.href='schedule.html'">
+                                    View Details
+                                </button>
+                                <button class="btn btn-secondary" style="font-size: 13px; padding: 6px 16px; width: auto;" onclick="dismissNotif(this)">
+                                    Dismiss
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notification 2 - Unread -->
+                <div class="card" style="border-left: 4px solid var(--prayer-purple); background-color: #F3F0FF;">
+                    <div style="display: flex; gap: 12px;">
+                        <div class="prayer-avatar" style="width: 40px; height: 40px; font-size: 14px; flex-shrink: 0; background-color: var(--prayer-purple);">
+                            🙏
+                        </div>
+                        <div style="flex: 1;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 4px;">
+                                <h4 style="margin: 0; font-size: 15px;">Sarah Kim posted a prayer request</h4>
+                                <span class="text-tiny" style="color: var(--gray-400);">2h ago</span>
+                            </div>
+                            <p style="font-size: 14px; color: var(--gray-700); margin: 4px 0;">
+                                "Pray for healing for my father who is recovering from surgery..."
+                            </p>
+                            <div style="margin-top: 12px; display: flex; gap: 8px;">
+                                <button class="btn btn-prayer" style="font-size: 13px; padding: 6px 16px; width: auto;" onclick="window.location.href='prayer-wall.html'">
+                                    🙏 Pray
+                                </button>
+                                <button class="btn btn-secondary" style="font-size: 13px; padding: 6px 16px; width: auto;" onclick="dismissNotif(this)">
+                                    Dismiss
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notification 3 - Unread -->
+                <div class="card" style="border-left: 4px solid var(--success-green); background-color: #ECFDF5;">
+                    <div style="display: flex; gap: 12px;">
+                        <div class="prayer-avatar" style="width: 40px; height: 40px; font-size: 14px; flex-shrink: 0; background-color: var(--success-green);">
+                            ✅
+                        </div>
+                        <div style="flex: 1;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 4px;">
+                                <h4 style="margin: 0; font-size: 15px;">Sign-up confirmed!</h4>
+                                <span class="text-tiny" style="color: var(--gray-400);">3h ago</span>
+                            </div>
+                            <p style="font-size: 14px; color: var(--gray-700); margin: 4px 0;">
+                                You've been added to Hospitality Team for Nov 3. Check your schedule for details.
+                            </p>
+                            <div style="margin-top: 12px;">
+                                <button class="btn btn-secondary" style="font-size: 13px; padding: 6px 16px; width: auto;" onclick="dismissNotif(this)">
+                                    Dismiss
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notification 4 - Message -->
+                <div class="card" style="border-left: 4px solid var(--info-blue); background-color: #EFF6FF;">
+                    <div style="display: flex; gap: 12px;">
+                        <div class="prayer-avatar" style="width: 40px; height: 40px; font-size: 14px; flex-shrink: 0; background-color: var(--info-blue);">
+                            MW
+                        </div>
+                        <div style="flex: 1;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 4px;">
+                                <h4 style="margin: 0; font-size: 15px;">Margaret Wong sent you a message</h4>
+                                <span class="text-tiny" style="color: var(--gray-400);">4h ago</span>
+                            </div>
+                            <p style="font-size: 14px; color: var(--gray-700); margin: 4px 0;">
+                                "Just a reminder that we have communion setup this Sunday..."
+                            </p>
+                            <div style="margin-top: 12px; display: flex; gap: 8px;">
+                                <button class="btn btn-primary" style="font-size: 13px; padding: 6px 16px; width: auto;" onclick="window.location.href='messages.html'">
+                                    Reply
+                                </button>
+                                <button class="btn btn-secondary" style="font-size: 13px; padding: 6px 16px; width: auto;" onclick="dismissNotif(this)">
+                                    Dismiss
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yesterday -->
+                <div style="font-size: 14px; font-weight: 600; color: var(--gray-600); margin: 24px 0 12px 0;">
+                    Yesterday
+                </div>
+
+                <!-- Notification 5 - Read -->
+                <div class="card" style="opacity: 0.7;">
+                    <div style="display: flex; gap: 12px;">
+                        <div class="prayer-avatar" style="width: 40px; height: 40px; font-size: 14px; flex-shrink: 0; background-color: var(--gray-400);">
+                            👥
+                        </div>
+                        <div style="flex: 1;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 4px;">
+                                <h4 style="margin: 0; font-size: 15px;">New team message in Hospitality Team</h4>
+                                <span class="text-tiny" style="color: var(--gray-400);">1d ago</span>
+                            </div>
+                            <p style="font-size: 14px; color: var(--gray-600); margin: 4px 0;">
+                                John Martinez: "Great team! I'll handle the coffee setup."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notification 6 - Read -->
+                <div class="card" style="opacity: 0.7;">
+                    <div style="display: flex; gap: 12px;">
+                        <div class="prayer-avatar" style="width: 40px; height: 40px; font-size: 14px; flex-shrink: 0; background-color: var(--warning-amber);">
+                            ⚠️
+                        </div>
+                        <div style="flex: 1;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 4px;">
+                                <h4 style="margin: 0; font-size: 15px;">Urgent: Clean-up Team needs volunteers</h4>
+                                <span class="text-tiny" style="color: var(--gray-400);">1d ago</span>
+                            </div>
+                            <p style="font-size: 14px; color: var(--gray-600); margin: 4px 0;">
+                                Only 1 of 3 volunteers signed up for Nov 10. Can you help?
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notification 7 - Cross-Church -->
+                <div class="card" style="opacity: 0.7;">
+                    <div style="display: flex; gap: 12px;">
+                        <div class="prayer-avatar" style="width: 40px; height: 40px; font-size: 14px; flex-shrink: 0; background-color: var(--info-blue);">
+                            🎸
+                        </div>
+                        <div style="flex: 1;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 4px;">
+                                <h4 style="margin: 0; font-size: 15px;">New cross-church opportunity</h4>
+                                <span class="text-tiny" style="color: var(--gray-400);">1d ago</span>
+                            </div>
+                            <p style="font-size: 14px; color: var(--gray-600); margin: 4px 0;">
+                                Grace Community needs a guitarist for Sunday service (5 miles away)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- This Week -->
+                <div style="font-size: 14px; font-weight: 600; color: var(--gray-600); margin: 24px 0 12px 0;">
+                    This Week
+                </div>
+
+                <!-- Notification 8 - Achievement -->
+                <div class="card" style="opacity: 0.7;">
+                    <div style="display: flex; gap: 12px;">
+                        <div class="prayer-avatar" style="width: 40px; height: 40px; font-size: 20px; flex-shrink: 0; background: linear-gradient(135deg, var(--warning-amber), #FBBF24);">
+                            🏆
+                        </div>
+                        <div style="flex: 1;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 4px;">
+                                <h4 style="margin: 0; font-size: 15px;">Achievement unlocked!</h4>
+                                <span class="text-tiny" style="color: var(--gray-400);">3d ago</span>
+                            </div>
+                            <p style="font-size: 14px; color: var(--gray-600); margin: 4px 0;">
+                                "Faithful Servant" - 6 months of consistent service. Thank you for your dedication!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notification 9 - Bible Study -->
+                <div class="card" style="opacity: 0.7;">
+                    <div style="display: flex; gap: 12px;">
+                        <div class="prayer-avatar" style="width: 40px; height: 40px; font-size: 14px; flex-shrink: 0; background-color: var(--prayer-purple);">
+                            📖
+                        </div>
+                        <div style="flex: 1;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 4px;">
+                                <h4 style="margin: 0; font-size: 15px;">This Sunday's readings are available</h4>
+                                <span class="text-tiny" style="color: var(--gray-400);">4d ago</span>
+                            </div>
+                            <p style="font-size: 14px; color: var(--gray-600); margin: 4px 0;">
+                                Luke 19:1-10 • 2 Thessalonians 1:1-4 • Psalm 32
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Empty state for when all notifications are read -->
+                <div id="emptyState" class="empty-state" style="display: none;">
+                    <div class="empty-state-icon">✅</div>
+                    <h3 class="empty-state-title">All caught up!</h3>
+                    <p class="empty-state-text">You've read all your notifications.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <span class="nav-icon">🏠</span>
+            <span>Home</span>
+        </a>
+        <a href="schedule.html" class="nav-item">
+            <span class="nav-icon">📅</span>
+            <span>Schedule</span>
+        </a>
+        <a href="opportunities.html" class="nav-item">
+            <span class="nav-icon">🔍</span>
+            <span>Find</span>
+        </a>
+        <a href="prayer-wall.html" class="nav-item">
+            <span class="nav-icon">🙏</span>
+            <span>Prayer</span>
+        </a>
+        <a href="more.html" class="nav-item">
+            <span class="nav-icon">⚙️</span>
+            <span>More</span>
+        </a>
+    </nav>
+
+    <script src="app.js"></script>
+    <script>
+        function dismissNotif(button) {
+            const card = button.closest('.card');
+            card.style.transition = 'opacity 0.3s, transform 0.3s';
+            card.style.opacity = '0';
+            card.style.transform = 'translateX(100px)';
+            setTimeout(() => {
+                card.remove();
+                checkIfEmpty();
+            }, 300);
+        }
+
+        function markAllRead() {
+            if (confirm('Mark all notifications as read?')) {
+                document.querySelectorAll('.card[style*="border-left"]').forEach(card => {
+                    card.style.opacity = '0.7';
+                    card.style.borderLeft = 'none';
+                    card.style.backgroundColor = 'white';
+                });
+                alert('✓ All notifications marked as read');
+            }
+        }
+
+        function checkIfEmpty() {
+            const cards = document.querySelectorAll('.card');
+            if (cards.length === 0) {
+                document.getElementById('emptyState').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

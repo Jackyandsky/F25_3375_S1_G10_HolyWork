@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HolyWork - Messages</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Header -->
+    <div class="top-header">
+        <button class="header-btn" onclick="history.back()">←</button>
+        <h1 class="header-title">Messages</h1>
+        <button class="header-btn" onclick="composeMessage()">✏️</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="screen" style="padding-top: 16px;">
+        <div class="container">
+            <!-- Search -->
+            <div style="margin-bottom: 16px;">
+                <input type="text" class="form-input" placeholder="🔍 Search messages..." style="padding: 12px 16px;">
+            </div>
+
+            <!-- Messages List -->
+            <div class="section">
+                <!-- Message 1 - Unread -->
+                <div class="card" onclick="openConversation('Margaret Wong')" style="cursor: pointer; border-left: 4px solid var(--primary-blue-500); background-color: var(--primary-blue-50);">
+                    <div style="display: flex; gap: 12px; align-items: start;">
+                        <div class="prayer-avatar" style="width: 48px; height: 48px; font-size: 16px; flex-shrink: 0; background-color: var(--gray-600);">
+                            MW
+                        </div>
+                        <div style="flex: 1; min-width: 0;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 4px;">
+                                <h4 style="margin: 0; font-size: 16px; font-weight: 600;">Margaret Wong</h4>
+                                <div style="display: flex; flex-direction: column; align-items: flex-end;">
+                                    <span class="text-tiny" style="color: var(--gray-400); margin-bottom: 4px;">4h ago</span>
+                                    <span class="badge badge-info" style="font-size: 10px; padding: 2px 6px;">2</span>
+                                </div>
+                            </div>
+                            <p class="text-small" style="color: var(--gray-600); margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                Just a reminder that we have communion setup this Sunday, so we'll need to arrive 15 minutes earlier...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Message 2 - Unread -->
+                <div class="card" onclick="openConversation('Pastor David Chen')" style="cursor: pointer; border-left: 4px solid var(--primary-blue-500); background-color: var(--primary-blue-50);">
+                    <div style="display: flex; gap: 12px; align-items: start;">
+                        <div class="prayer-avatar" style="width: 48px; height: 48px; font-size: 16px; flex-shrink: 0; background-color: var(--primary-blue-500);">
+                            DC
+                        </div>
+                        <div style="flex: 1; min-width: 0;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 4px;">
+                                <h4 style="margin: 0; font-size: 16px; font-weight: 600;">Pastor David Chen</h4>
+                                <div style="display: flex; flex-direction: column; align-items: flex-end;">
+                                    <span class="text-tiny" style="color: var(--gray-400); margin-bottom: 4px;">1d ago</span>
+                                    <span class="badge badge-info" style="font-size: 10px; padding: 2px 6px;">1</span>
+                                </div>
+                            </div>
+                            <p class="text-small" style="color: var(--gray-600); margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                Thank you for your faithful service! I wanted to personally thank you for stepping up last week...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Message 3 - Read -->
+                <div class="card" onclick="openConversation('Sarah Kim')" style="cursor: pointer; opacity: 0.7;">
+                    <div style="display: flex; gap: 12px; align-items: start;">
+                        <div class="prayer-avatar" style="width: 48px; height: 48px; font-size: 16px; flex-shrink: 0;">
+                            SK
+                        </div>
+                        <div style="flex: 1; min-width: 0;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 4px;">
+                                <h4 style="margin: 0; font-size: 16px; font-weight: 500;">Sarah Kim</h4>
+                                <span class="text-tiny" style="color: var(--gray-400);">2d ago</span>
+                            </div>
+                            <p class="text-small" style="color: var(--gray-600); margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                You: Thanks! Looking forward to serving with you on Sunday 😊
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Message 4 - Read -->
+                <div class="card" onclick="openConversation('James Rodriguez')" style="cursor: pointer; opacity: 0.7;">
+                    <div style="display: flex; gap: 12px; align-items: start;">
+                        <div class="prayer-avatar" style="width: 48px; height: 48px; font-size: 16px; flex-shrink: 0; background-color: var(--success-green);">
+                            JR
+                        </div>
+                        <div style="flex: 1; min-width: 0;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 4px;">
+                                <h4 style="margin: 0; font-size: 16px; font-weight: 500;">James Rodriguez</h4>
+                                <span class="text-tiny" style="color: var(--gray-400);">3d ago</span>
+                            </div>
+                            <p class="text-small" style="color: var(--gray-600); margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                Hey! Do you have the music charts from last Sunday's worship?
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Message 5 - Read -->
+                <div class="card" onclick="openConversation('Emily Tran')" style="cursor: pointer; opacity: 0.7;">
+                    <div style="display: flex; gap: 12px; align-items: start;">
+                        <div class="prayer-avatar" style="width: 48px; height: 48px; font-size: 16px; flex-shrink: 0; background-color: var(--warning-amber);">
+                            ET
+                        </div>
+                        <div style="flex: 1; min-width: 0;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 4px;">
+                                <h4 style="margin: 0; font-size: 16px; font-weight: 500;">Emily Tran</h4>
+                                <span class="text-tiny" style="color: var(--gray-400);">5d ago</span>
+                            </div>
+                            <p class="text-small" style="color: var(--gray-600); margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                Thanks for praying for my interview! It went really well 🙏
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Message 6 - Group Message -->
+                <div class="card" onclick="window.location.href='team-chat.html'" style="cursor: pointer; opacity: 0.7; border-left: 3px solid var(--primary-blue-500);">
+                    <div style="display: flex; gap: 12px; align-items: start;">
+                        <div class="prayer-avatar" style="width: 48px; height: 48px; font-size: 24px; flex-shrink: 0; background-color: var(--primary-blue-500);">
+                            👥
+                        </div>
+                        <div style="flex: 1; min-width: 0;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 4px;">
+                                <div style="display: flex; align-items: center; gap: 6px;">
+                                    <h4 style="margin: 0; font-size: 16px; font-weight: 500;">Hospitality Team</h4>
+                                    <span class="badge" style="background-color: var(--primary-blue-100); color: var(--primary-blue-700); font-size: 10px; padding: 2px 6px;">5 members</span>
+                                </div>
+                                <span class="text-tiny" style="color: var(--gray-400);">6d ago</span>
+                            </div>
+                            <p class="text-small" style="color: var(--gray-600); margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                John Martinez: Great team! I'll handle the coffee setup. See everyone Sunday! ☕️
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Message 7 - Group Message (Set-up Team) -->
+                <div class="card" onclick="openGroupChat('set-up')" style="cursor: pointer; opacity: 0.7; border-left: 3px solid var(--success-green);">
+                    <div style="display: flex; gap: 12px; align-items: start;">
+                        <div class="prayer-avatar" style="width: 48px; height: 48px; font-size: 24px; flex-shrink: 0; background-color: var(--success-green);">
+                            👥
+                        </div>
+                        <div style="flex: 1; min-width: 0;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 4px;">
+                                <div style="display: flex; align-items: center; gap: 6px;">
+                                    <h4 style="margin: 0; font-size: 16px; font-weight: 500;">Set-up Team</h4>
+                                    <span class="badge" style="background-color: var(--success-green); color: white; font-size: 10px; padding: 2px 6px;">8 members</span>
+                                </div>
+                                <span class="text-tiny" style="color: var(--gray-400);">1w ago</span>
+                            </div>
+                            <p class="text-small" style="color: var(--gray-600); margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                Sarah Kim: Thanks everyone for the hard work last Sunday! 💪
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Message 8 - Group Message (Music Team) -->
+                <div class="card" onclick="openGroupChat('music')" style="cursor: pointer; opacity: 0.7; border-left: 3px solid var(--prayer-purple);">
+                    <div style="display: flex; gap: 12px; align-items: start;">
+                        <div class="prayer-avatar" style="width: 48px; height: 48px; font-size: 24px; flex-shrink: 0; background-color: var(--prayer-purple);">
+                            👥
+                        </div>
+                        <div style="flex: 1; min-width: 0;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 4px;">
+                                <div style="display: flex; align-items: center; gap: 6px;">
+                                    <h4 style="margin: 0; font-size: 16px; font-weight: 500;">Music Team</h4>
+                                    <span class="badge" style="background-color: var(--prayer-purple); color: white; font-size: 10px; padding: 2px 6px;">12 members</span>
+                                </div>
+                                <span class="text-tiny" style="color: var(--gray-400);">2w ago</span>
+                            </div>
+                            <p class="text-small" style="color: var(--gray-600); margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                James Rodriguez: Practice at 7pm Thursday. See you all there! 🎵
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Empty state (hidden initially) -->
+                <div id="emptyState" class="empty-state" style="display: none;">
+                    <div class="empty-state-icon">💬</div>
+                    <h3 class="empty-state-title">No messages yet</h3>
+                    <p class="empty-state-text">Start a conversation with your team members!</p>
+                    <button class="btn btn-primary" onclick="composeMessage()">
+                        ✏️ New Message
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Compose Message Modal -->
+    <div id="composeModal" class="modal-overlay" onclick="closeModal(event)">
+        <div class="modal" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h2 class="modal-title">New Message</h2>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="form-label">To:</label>
+                    <select class="form-select">
+                        <option value="">Select a person...</option>
+                        <option>Margaret Wong (Coordinator)</option>
+                        <option>Pastor David Chen</option>
+                        <option>Sarah Kim</option>
+                        <option>James Rodriguez</option>
+                        <option>Emily Tran</option>
+                        <option>John Martinez</option>
+                        <option>─────────</option>
+                        <option>Hospitality Team (Group)</option>
+                        <option>Set-up Team (Group)</option>
+                        <option>Music Team (Group)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Message:</label>
+                    <textarea class="form-textarea" placeholder="Type your message here..." rows="5"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeComposeModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="sendMessage()">Send Message</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <span class="nav-icon">🏠</span>
+            <span>Home</span>
+        </a>
+        <a href="schedule.html" class="nav-item">
+            <span class="nav-icon">📅</span>
+            <span>Schedule</span>
+        </a>
+        <a href="opportunities.html" class="nav-item">
+            <span class="nav-icon">🔍</span>
+            <span>Find</span>
+        </a>
+        <a href="prayer-wall.html" class="nav-item">
+            <span class="nav-icon">🙏</span>
+            <span>Prayer</span>
+        </a>
+        <a href="more.html" class="nav-item">
+            <span class="nav-icon">⚙️</span>
+            <span>More</span>
+        </a>
+    </nav>
+
+    <script src="app.js"></script>
+    <script>
+        function openConversation(name) {
+            // For now, redirect to team chat as example
+            if (name.includes('Team')) {
+                window.location.href = 'team-chat.html';
+            } else {
+                alert(`Opening conversation with ${name}...\n\n(Individual messaging coming soon! For now, you can use team channels.)`);
+            }
+        }
+
+        function openGroupChat(team) {
+            // All group chats redirect to team-chat.html for now
+            // In a full app, this would load the specific team's chat
+            window.location.href = 'team-chat.html';
+        }
+
+        function composeMessage() {
+            document.getElementById('composeModal').classList.add('active');
+        }
+
+        function closeComposeModal() {
+            document.getElementById('composeModal').classList.remove('active');
+        }
+
+        function sendMessage() {
+            const select = document.querySelector('#composeModal select');
+            const textarea = document.querySelector('#composeModal textarea');
+
+            if (!select.value) {
+                alert('Please select a recipient');
+                return;
+            }
+
+            if (!textarea.value.trim()) {
+                alert('Please type a message');
+                return;
+            }
+
+            alert(`✓ Message sent to ${select.value}!`);
+            closeComposeModal();
+
+            // Reset form
+            select.value = '';
+            textarea.value = '';
+        }
+
+        function closeModal(event) {
+            if (event.target.classList.contains('modal-overlay')) {
+                event.target.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>

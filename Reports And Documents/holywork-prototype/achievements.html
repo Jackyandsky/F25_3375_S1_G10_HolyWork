@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HolyWork - Achievements</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Header -->
+    <div class="top-header">
+        <button class="header-btn" onclick="history.back()">←</button>
+        <h1 class="header-title">Achievements</h1>
+        <button class="header-btn" onclick="viewLeaderboard()">👥</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="screen" style="padding-top: 16px;">
+        <div class="container">
+            <!-- Overall Progress Card -->
+            <div class="card" style="background: linear-gradient(135deg, var(--primary-blue-500), var(--prayer-purple)); color: white; text-align: center; margin-bottom: 24px;">
+                <h2 style="margin: 0 0 8px 0; font-size: 28px;">Level 3 Volunteer</h2>
+                <p style="margin: 0 0 16px 0; opacity: 0.9;">You've unlocked 6 of 15 achievements</p>
+
+                <!-- Progress Bar -->
+                <div style="background: rgba(255, 255, 255, 0.2); border-radius: 20px; height: 12px; margin-bottom: 8px; overflow: hidden;">
+                    <div style="background: white; height: 100%; width: 40%; border-radius: 20px; transition: width 0.3s;"></div>
+                </div>
+                <p style="margin: 0; font-size: 14px; opacity: 0.9;">280 / 500 points to Level 4</p>
+            </div>
+
+            <!-- Filter Chips -->
+            <div class="filter-chips">
+                <div class="chip active">All</div>
+                <div class="chip">Unlocked</div>
+                <div class="chip">Locked</div>
+                <div class="chip">Recent</div>
+            </div>
+
+            <!-- Unlocked Achievements -->
+            <div class="section">
+                <h2 class="section-title">🏆 Unlocked Achievements (6)</h2>
+
+                <!-- Achievement 1 - Unlocked -->
+                <div class="card" style="border-left: 4px solid var(--success-green);">
+                    <div style="display: flex; gap: 16px; align-items: start;">
+                        <div style="width: 64px; height: 64px; border-radius: 12px; background: linear-gradient(135deg, var(--success-green), #059669); display: flex; align-items: center; justify-content: center; font-size: 32px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);">
+                            🏆
+                        </div>
+                        <div style="flex: 1;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 4px;">
+                                <h3 style="margin: 0; font-size: 18px;">Faithful Servant</h3>
+                                <span class="badge badge-success" style="font-size: 11px;">+50 pts</span>
+                            </div>
+                            <p class="text-small" style="margin: 4px 0 8px 0; color: var(--gray-600);">
+                                Serve 40+ hours in volunteer activities
+                            </p>
+                            <p class="text-tiny" style="margin: 0; color: var(--success-green);">
+                                ✓ Unlocked 2 days ago • 47 hours served
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievement 2 - Unlocked -->
+                <div class="card" style="border-left: 4px solid var(--primary-blue-500);">
+                    <div style="display: flex; gap: 16px; align-items: start;">
+                        <div style="width: 64px; height: 64px; border-radius: 12px; background: linear-gradient(135deg, var(--primary-blue-500), #1E40AF); display: flex; align-items: center; justify-content: center; font-size: 32px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);">
+                            👥
+                        </div>
+                        <div style="flex: 1;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 4px;">
+                                <h3 style="margin: 0; font-size: 18px;">Team Player</h3>
+                                <span class="badge badge-info" style="font-size: 11px;">+30 pts</span>
+                            </div>
+                            <p class="text-small" style="margin: 4px 0 8px 0; color: var(--gray-600);">
+                                Join 3 different ministry teams
+                            </p>
+                            <p class="text-tiny" style="margin: 0; color: var(--primary-blue-500);">
+                                ✓ Unlocked 1 week ago • 3 teams joined
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievement 3 - Unlocked -->
+                <div class="card" style="border-left: 4px solid var(--prayer-purple);">
+                    <div style="display: flex; gap: 16px; align-items: start;">
+                        <div style="width: 64px; height: 64px; border-radius: 12px; background: linear-gradient(135deg, var(--prayer-purple), #7C3AED); display: flex; align-items: center; justify-content: center; font-size: 32px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);">
+                            🙏
+                        </div>
+                        <div style="flex: 1;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 4px;">
+                                <h3 style="margin: 0; font-size: 18px;">Prayer Warrior</h3>
+                                <span class="badge" style="background-color: var(--prayer-purple); color: white; font-size: 11px;">+25 pts</span>
+                            </div>
+                            <p class="text-small" style="margin: 4px 0 8px 0; color: var(--gray-600);">
+                                Pray for 20+ prayer requests
+                            </p>
+                            <p class="text-tiny" style="margin: 0; color: var(--prayer-purple);">
+                                ✓ Unlocked 2 weeks ago • 23 prayers
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievement 4 - Unlocked -->
+                <div class="card" style="border-left: 4px solid var(--warning-amber);">
+                    <div style="display: flex; gap: 16px; align-items: start;">
+                        <div style="width: 64px; height: 64px; border-radius: 12px; background: linear-gradient(135deg, var(--warning-amber), #D97706); display: flex; align-items: center; justify-content: center; font-size: 32px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);">
+                            🎯
+                        </div>
+                        <div style="flex: 1;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 4px;">
+                                <h3 style="margin: 0; font-size: 18px;">Perfect Attendance</h3>
+                                <span class="badge badge-warning" style="font-size: 11px;">+20 pts</span>
+                            </div>
+                            <p class="text-small" style="margin: 4px 0 8px 0; color: var(--gray-600);">
+                                Complete all scheduled services for a month
+                            </p>
+                            <p class="text-tiny" style="margin: 0; color: var(--warning-amber);">
+                                ✓ Unlocked 3 weeks ago • October 2025
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievement 5 - Unlocked -->
+                <div class="card" style="border-left: 4px solid var(--info-blue);">
+                    <div style="display: flex; gap: 16px; align-items: start;">
+                        <div style="width: 64px; height: 64px; border-radius: 12px; background: linear-gradient(135deg, var(--info-blue), #2563EB); display: flex; align-items: center; justify-content: center; font-size: 32px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);">
+                            🌟
+                        </div>
+                        <div style="flex: 1;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 4px;">
+                                <h3 style="margin: 0; font-size: 18px;">First Steps</h3>
+                                <span class="badge badge-info" style="font-size: 11px;">+10 pts</span>
+                            </div>
+                            <p class="text-small" style="margin: 4px 0 8px 0; color: var(--gray-600);">
+                                Complete your first volunteer shift
+                            </p>
+                            <p class="text-tiny" style="margin: 0; color: var(--info-blue);">
+                                ✓ Unlocked 12 months ago
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievement 6 - Unlocked -->
+                <div class="card" style="border-left: 4px solid #EC4899;">
+                    <div style="display: flex; gap: 16px; align-items: start;">
+                        <div style="width: 64px; height: 64px; border-radius: 12px; background: linear-gradient(135deg, #EC4899, #DB2777); display: flex; align-items: center; justify-content: center; font-size: 32px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3);">
+                            💝
+                        </div>
+                        <div style="flex: 1;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 4px;">
+                                <h3 style="margin: 0; font-size: 18px;">Generous Giver</h3>
+                                <span class="badge" style="background-color: #EC4899; color: white; font-size: 11px;">+25 pts</span>
+                            </div>
+                            <p class="text-small" style="margin: 4px 0 8px 0; color: var(--gray-600);">
+                                Make your first donation
+                            </p>
+                            <p class="text-tiny" style="margin: 0; color: #EC4899;">
+                                ✓ Unlocked 1 month ago
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Locked Achievements -->
+            <div class="section">
+                <h2 class="section-title">🔒 Locked Achievements (9)</h2>
+
+                <!-- Achievement 7 - Locked -->
+                <div class="card" style="opacity: 0.6; border-left: 4px solid var(--gray-300);">
+                    <div style="display: flex; gap: 16px; align-items: start;">
+                        <div style="width: 64px; height: 64px; border-radius: 12px; background: var(--gray-300); display: flex; align-items: center; justify-content: center; font-size: 32px; flex-shrink: 0;">
+                            🔒
+                        </div>
+                        <div style="flex: 1;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 4px;">
+                                <h3 style="margin: 0; font-size: 18px;">Century Club</h3>
+                                <span class="badge" style="background-color: var(--gray-400); color: white; font-size: 11px;">+100 pts</span>
+                            </div>
+                            <p class="text-small" style="margin: 4px 0 8px 0; color: var(--gray-600);">
+                                Serve 100+ hours total
+                            </p>
+                            <div style="margin-top: 8px;">
+                                <div style="background: var(--gray-200); border-radius: 20px; height: 8px; overflow: hidden;">
+                                    <div style="background: var(--primary-blue-500); height: 100%; width: 47%; transition: width 0.3s;"></div>
+                                </div>
+                                <p class="text-tiny" style="margin: 4px 0 0 0; color: var(--gray-500);">47 / 100 hours</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievement 8 - Locked -->
+                <div class="card" style="opacity: 0.6; border-left: 4px solid var(--gray-300);">
+                    <div style="display: flex; gap: 16px; align-items: start;">
+                        <div style="width: 64px; height: 64px; border-radius: 12px; background: var(--gray-300); display: flex; align-items: center; justify-content: center; font-size: 32px; flex-shrink: 0;">
+                            🔒
+                        </div>
+                        <div style="flex: 1;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 4px;">
+                                <h3 style="margin: 0; font-size: 18px;">Community Builder</h3>
+                                <span class="badge" style="background-color: var(--gray-400); color: white; font-size: 11px;">+50 pts</span>
+                            </div>
+                            <p class="text-small" style="margin: 4px 0 8px 0; color: var(--gray-600);">
+                                Send 50 messages in team chats
+                            </p>
+                            <div style="margin-top: 8px;">
+                                <div style="background: var(--gray-200); border-radius: 20px; height: 8px; overflow: hidden;">
+                                    <div style="background: var(--primary-blue-500); height: 100%; width: 28%; transition: width 0.3s;"></div>
+                                </div>
+                                <p class="text-tiny" style="margin: 4px 0 0 0; color: var(--gray-500);">14 / 50 messages</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievement 9 - Locked -->
+                <div class="card" style="opacity: 0.6; border-left: 4px solid var(--gray-300);">
+                    <div style="display: flex; gap: 16px; align-items: start;">
+                        <div style="width: 64px; height: 64px; border-radius: 12px; background: var(--gray-300); display: flex; align-items: center; justify-content: center; font-size: 32px; flex-shrink: 0;">
+                            🔒
+                        </div>
+                        <div style="flex: 1;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 4px;">
+                                <h3 style="margin: 0; font-size: 18px;">Bible Scholar</h3>
+                                <span class="badge" style="background-color: var(--gray-400); color: white; font-size: 11px;">+40 pts</span>
+                            </div>
+                            <p class="text-small" style="margin: 4px 0 8px 0; color: var(--gray-600);">
+                                Complete 10 Bible study sessions
+                            </p>
+                            <div style="margin-top: 8px;">
+                                <div style="background: var(--gray-200); border-radius: 20px; height: 8px; overflow: hidden;">
+                                    <div style="background: var(--prayer-purple); height: 100%; width: 30%; transition: width 0.3s;"></div>
+                                </div>
+                                <p class="text-tiny" style="margin: 4px 0 0 0; color: var(--gray-500);">3 / 10 sessions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Show more button -->
+                <button class="btn btn-secondary" style="width: 100%; margin-top: 8px;" onclick="showMoreAchievements()">
+                    Show 6 More Locked Achievements
+                </button>
+            </div>
+
+            <!-- Milestones -->
+            <div class="section">
+                <h2 class="section-title">🎯 Next Milestones</h2>
+
+                <div class="card">
+                    <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--gray-200);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                            <strong style="font-size: 14px;">🏆 Level 4 Volunteer</strong>
+                            <span class="text-tiny" style="color: var(--gray-600);">56% complete</span>
+                        </div>
+                        <div style="background: var(--gray-200); border-radius: 20px; height: 10px; overflow: hidden;">
+                            <div style="background: linear-gradient(90deg, var(--primary-blue-500), var(--prayer-purple)); height: 100%; width: 56%; transition: width 0.3s;"></div>
+                        </div>
+                        <p class="text-tiny" style="margin: 4px 0 0 0; color: var(--gray-600);">280 / 500 points</p>
+                    </div>
+
+                    <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--gray-200);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                            <strong style="font-size: 14px;">⏰ 50 Hours Served</strong>
+                            <span class="text-tiny" style="color: var(--gray-600);">94% complete</span>
+                        </div>
+                        <div style="background: var(--gray-200); border-radius: 20px; height: 10px; overflow: hidden;">
+                            <div style="background: var(--success-green); height: 100%; width: 94%; transition: width 0.3s;"></div>
+                        </div>
+                        <p class="text-tiny" style="margin: 4px 0 0 0; color: var(--gray-600);">47 / 50 hours</p>
+                    </div>
+
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                            <strong style="font-size: 14px;">📅 6-Month Streak</strong>
+                            <span class="text-tiny" style="color: var(--gray-600);">33% complete</span>
+                        </div>
+                        <div style="background: var(--gray-200); border-radius: 20px; height: 10px; overflow: hidden;">
+                            <div style="background: var(--warning-amber); height: 100%; width: 33%; transition: width 0.3s;"></div>
+                        </div>
+                        <p class="text-tiny" style="margin: 4px 0 0 0; color: var(--gray-600);">2 / 6 months streak</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="card" style="text-align: center; background: linear-gradient(135deg, var(--success-green), #059669); color: white;">
+                <h3 style="margin: 0 0 8px 0; font-size: 18px;">🎉 Keep Going!</h3>
+                <p style="margin: 0 0 16px 0; opacity: 0.9;">
+                    You're only 3 hours away from unlocking "50 Hours Milestone"!
+                </p>
+                <button class="btn" style="background-color: white; color: var(--success-green);" onclick="window.location.href='opportunities.html'">
+                    Find Opportunities
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Leaderboard Modal -->
+    <div id="leaderboardModal" class="modal-overlay" onclick="closeModal(event)">
+        <div class="modal" onclick="event.stopPropagation()" style="max-width: 500px;">
+            <div class="modal-header">
+                <h2 class="modal-title">🏆 Leaderboard</h2>
+            </div>
+            <div class="modal-body">
+                <div style="text-align: center; margin-bottom: 16px;">
+                    <p class="text-small" style="margin: 0; color: var(--gray-600);">This Month's Top Volunteers</p>
+                </div>
+
+                <!-- Top 3 -->
+                <div style="margin-bottom: 24px;">
+                    <!-- Rank 1 -->
+                    <div style="display: flex; gap: 12px; align-items: center; padding: 16px; background: linear-gradient(135deg, #FFD700, #FFA500); border-radius: 8px; margin-bottom: 8px;">
+                        <div style="font-size: 32px; font-weight: 700; color: white;">1</div>
+                        <div class="prayer-avatar" style="width: 48px; height: 48px; font-size: 16px; background-color: white; color: #FFD700;">SM</div>
+                        <div style="flex: 1;">
+                            <strong style="color: white;">Sarah Martinez</strong>
+                            <p class="text-tiny" style="margin: 4px 0 0 0; color: white; opacity: 0.9;">580 points • 24 hours</p>
+                        </div>
+                        <div style="font-size: 24px;">🥇</div>
+                    </div>
+
+                    <!-- Rank 2 -->
+                    <div style="display: flex; gap: 12px; align-items: center; padding: 16px; background: linear-gradient(135deg, #C0C0C0, #A8A8A8); border-radius: 8px; margin-bottom: 8px;">
+                        <div style="font-size: 32px; font-weight: 700; color: white;">2</div>
+                        <div class="prayer-avatar" style="width: 48px; height: 48px; font-size: 16px; background-color: white; color: #C0C0C0;">JR</div>
+                        <div style="flex: 1;">
+                            <strong style="color: white;">James Rodriguez</strong>
+                            <p class="text-tiny" style="margin: 4px 0 0 0; color: white; opacity: 0.9;">520 points • 21 hours</p>
+                        </div>
+                        <div style="font-size: 24px;">🥈</div>
+                    </div>
+
+                    <!-- Rank 3 -->
+                    <div style="display: flex; gap: 12px; align-items: center; padding: 16px; background: linear-gradient(135deg, #CD7F32, #B8732E); border-radius: 8px; margin-bottom: 8px;">
+                        <div style="font-size: 32px; font-weight: 700; color: white;">3</div>
+                        <div class="prayer-avatar" style="width: 48px; height: 48px; font-size: 16px; background-color: white; color: #CD7F32;">ET</div>
+                        <div style="flex: 1;">
+                            <strong style="color: white;">Emily Tran</strong>
+                            <p class="text-tiny" style="margin: 4px 0 0 0; color: white; opacity: 0.9;">480 points • 19 hours</p>
+                        </div>
+                        <div style="font-size: 24px;">🥉</div>
+                    </div>
+                </div>
+
+                <!-- Your Rank -->
+                <div style="padding: 16px; background-color: var(--primary-blue-50); border-radius: 8px; border: 2px solid var(--primary-blue-500);">
+                    <div style="display: flex; gap: 12px; align-items: center;">
+                        <div style="font-size: 24px; font-weight: 700; color: var(--primary-blue-500);">8</div>
+                        <div class="prayer-avatar" style="width: 48px; height: 48px; font-size: 16px;">RM</div>
+                        <div style="flex: 1;">
+                            <strong>You (Robert Mitchell)</strong>
+                            <p class="text-tiny" style="margin: 4px 0 0 0; color: var(--gray-600);">280 points • 12 hours</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeLeaderboardModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <span class="nav-icon">🏠</span>
+            <span>Home</span>
+        </a>
+        <a href="schedule.html" class="nav-item">
+            <span class="nav-icon">📅</span>
+            <span>Schedule</span>
+        </a>
+        <a href="opportunities.html" class="nav-item">
+            <span class="nav-icon">🔍</span>
+            <span>Find</span>
+        </a>
+        <a href="prayer-wall.html" class="nav-item">
+            <span class="nav-icon">🙏</span>
+            <span>Prayer</span>
+        </a>
+        <a href="more.html" class="nav-item">
+            <span class="nav-icon">⚙️</span>
+            <span>More</span>
+        </a>
+    </nav>
+
+    <script src="app.js"></script>
+    <script>
+        function viewLeaderboard() {
+            document.getElementById('leaderboardModal').classList.add('active');
+        }
+
+        function closeLeaderboardModal() {
+            document.getElementById('leaderboardModal').classList.remove('active');
+        }
+
+        function showMoreAchievements() {
+            alert('6 more locked achievements:\n\n🔒 One Year Strong - Volunteer for 12 consecutive months\n🔒 Social Butterfly - Connect with 25 volunteers\n🔒 Event Host - Organize 3 events\n🔒 Spiritual Mentor - Lead 5 Bible studies\n🔒 Generous Heart - Donate $500 total\n🔒 Cross-Church Ambassador - Serve at 3 different churches');
+        }
+
+        function closeModal(event) {
+            if (event.target.classList.contains('modal-overlay')) {
+                event.target.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>

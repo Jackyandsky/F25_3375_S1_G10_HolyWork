@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HolyWork - More</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Header -->
+    <div class="top-header">
+        <h1 class="header-title">More</h1>
+        <button class="header-btn">🔔</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="screen" style="padding-top: 16px;">
+        <div class="container">
+            <!-- User Profile Card -->
+            <div class="card" style="text-align: center; margin-bottom: 24px;">
+                <div class="prayer-avatar" style="width: 80px; height: 80px; font-size: 32px; margin: 0 auto 16px; background: linear-gradient(135deg, var(--primary-blue-500), var(--primary-blue-600));">
+                    RM
+                </div>
+                <h2 style="margin-bottom: 4px;">Robert Mitchell</h2>
+                <p class="text-small" style="margin-bottom: 8px;">Active Volunteer • Christine Church</p>
+                <div style="display: flex; justify-content: center; gap: 24px; margin-top: 16px;">
+                    <div>
+                        <div style="font-size: 24px; font-weight: 600; color: var(--primary-blue-500);">47</div>
+                        <div class="text-tiny">Hours</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 24px; font-weight: 600; color: var(--primary-blue-500);">3</div>
+                        <div class="text-tiny">Teams</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 24px; font-weight: 600; color: var(--primary-blue-500);">12</div>
+                        <div class="text-tiny">Months</div>
+                    </div>
+                </div>
+                <button class="btn btn-secondary" style="margin-top: 16px;" onclick="window.location.href='profile.html'">
+                    View Profile
+                </button>
+            </div>
+
+            <!-- Main Features Grid -->
+            <div class="section">
+                <h2 class="section-title">Features</h2>
+
+                <!-- Feature Grid (2 columns) -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px;">
+                    <!-- Messages -->
+                    <div class="card" onclick="window.location.href='messages.html'" style="cursor: pointer; text-align: center; padding: 20px;">
+                        <div style="font-size: 36px; margin-bottom: 8px;">💬</div>
+                        <div style="font-weight: 600; margin-bottom: 4px;">Messages</div>
+                        <div class="badge badge-info" style="font-size: 11px;">3 unread</div>
+                    </div>
+
+                    <!-- Notifications -->
+                    <div class="card" onclick="window.location.href='notifications.html'" style="cursor: pointer; text-align: center; padding: 20px;">
+                        <div style="font-size: 36px; margin-bottom: 8px;">🔔</div>
+                        <div style="font-weight: 600; margin-bottom: 4px;">Notifications</div>
+                        <div class="badge badge-warning" style="font-size: 11px;">5 new</div>
+                    </div>
+
+                    <!-- Bible Study -->
+                    <div class="card" onclick="window.location.href='bible-study.html'" style="cursor: pointer; text-align: center; padding: 20px;">
+                        <div style="font-size: 36px; margin-bottom: 8px;">📖</div>
+                        <div style="font-weight: 600; margin-bottom: 4px;">Bible Study</div>
+                        <div class="text-tiny" style="color: var(--prayer-purple);">Sunday readings</div>
+                    </div>
+
+                    <!-- Events -->
+                    <div class="card" onclick="window.location.href='events.html'" style="cursor: pointer; text-align: center; padding: 20px;">
+                        <div style="font-size: 36px; margin-bottom: 8px;">🎉</div>
+                        <div style="font-weight: 600; margin-bottom: 4px;">Events</div>
+                        <div class="text-tiny" style="color: var(--gray-600);">Upcoming</div>
+                    </div>
+
+                    <!-- My Teams -->
+                    <div class="card" onclick="window.location.href='my-teams.html'" style="cursor: pointer; text-align: center; padding: 20px;">
+                        <div style="font-size: 36px; margin-bottom: 8px;">👥</div>
+                        <div style="font-weight: 600; margin-bottom: 4px;">My Teams</div>
+                        <div class="text-tiny" style="color: var(--gray-600);">3 teams</div>
+                    </div>
+
+                    <!-- Resources -->
+                    <div class="card" onclick="window.location.href='resources.html'" style="cursor: pointer; text-align: center; padding: 20px;">
+                        <div style="font-size: 36px; margin-bottom: 8px;">📚</div>
+                        <div style="font-weight: 600; margin-bottom: 4px;">Resources</div>
+                        <div class="text-tiny" style="color: var(--gray-600);">Guides</div>
+                    </div>
+
+                    <!-- Give -->
+                    <div class="card" onclick="window.location.href='giving.html'" style="cursor: pointer; text-align: center; padding: 20px;">
+                        <div style="font-size: 36px; margin-bottom: 8px;">💝</div>
+                        <div style="font-weight: 600; margin-bottom: 4px;">Give</div>
+                        <div class="text-tiny" style="color: var(--success-green);">Donate</div>
+                    </div>
+
+                    <!-- Achievements -->
+                    <div class="card" onclick="window.location.href='achievements.html'" style="cursor: pointer; text-align: center; padding: 20px;">
+                        <div style="font-size: 36px; margin-bottom: 8px;">🏆</div>
+                        <div style="font-weight: 600; margin-bottom: 4px;">Achievements</div>
+                        <div class="text-tiny" style="color: var(--warning-amber);">Level 3</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings & Support -->
+            <div class="section">
+                <h2 class="section-title">Settings & Support</h2>
+
+                <div class="card" style="padding: 0; overflow: hidden;">
+                    <!-- Settings List -->
+                    <a href="settings.html" style="display: flex; align-items: center; justify-content: space-between; padding: 16px; text-decoration: none; color: var(--gray-900); border-bottom: 1px solid var(--gray-200);">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <span style="font-size: 24px;">⚙️</span>
+                            <span style="font-weight: 500;">Settings</span>
+                        </div>
+                        <span style="color: var(--gray-400);">→</span>
+                    </a>
+
+                    <a href="#" onclick="showComingSoon(); return false;" style="display: flex; align-items: center; justify-content: space-between; padding: 16px; text-decoration: none; color: var(--gray-900); border-bottom: 1px solid var(--gray-200);">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <span style="font-size: 24px;">❓</span>
+                            <span style="font-weight: 500;">Help & Support</span>
+                        </div>
+                        <span style="color: var(--gray-400);">→</span>
+                    </a>
+
+                    <a href="#" onclick="showComingSoon(); return false;" style="display: flex; align-items: center; justify-content: space-between; padding: 16px; text-decoration: none; color: var(--gray-900); border-bottom: 1px solid var(--gray-200);">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <span style="font-size: 24px;">ℹ️</span>
+                            <span style="font-weight: 500;">About HolyWork</span>
+                        </div>
+                        <span style="color: var(--gray-400);">→</span>
+                    </a>
+
+                    <a href="#" onclick="showComingSoon(); return false;" style="display: flex; align-items: center; justify-content: space-between; padding: 16px; text-decoration: none; color: var(--gray-900);">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <span style="font-size: 24px;">📤</span>
+                            <span style="font-weight: 500;">Share HolyWork</span>
+                        </div>
+                        <span style="color: var(--gray-400);">→</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- App Info -->
+            <div style="text-align: center; margin: 32px 0; color: var(--gray-400);">
+                <p class="text-small">HolyWork v1.0</p>
+                <p class="text-tiny">Built with ❤️ for faith communities</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <span class="nav-icon">🏠</span>
+            <span>Home</span>
+        </a>
+        <a href="schedule.html" class="nav-item">
+            <span class="nav-icon">📅</span>
+            <span>Schedule</span>
+        </a>
+        <a href="opportunities.html" class="nav-item">
+            <span class="nav-icon">🔍</span>
+            <span>Find</span>
+        </a>
+        <a href="prayer-wall.html" class="nav-item">
+            <span class="nav-icon">🙏</span>
+            <span>Prayer</span>
+        </a>
+        <a href="more.html" class="nav-item active">
+            <span class="nav-icon">⚙️</span>
+            <span>More</span>
+        </a>
+    </nav>
+
+    <script src="app.js"></script>
+    <script>
+        function showComingSoon() {
+            alert('Coming soon! 🚀\n\nThis feature is planned for the next version of HolyWork.');
+        }
+    </script>
+</body>
+</html>

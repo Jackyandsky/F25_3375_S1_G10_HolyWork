@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HolyWork - Resources</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Header -->
+    <div class="top-header">
+        <button class="header-btn" onclick="history.back()">←</button>
+        <h1 class="header-title">Resources</h1>
+        <button class="header-btn" onclick="searchResources()">🔍</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="screen" style="padding-top: 16px;">
+        <div class="container">
+            <!-- Filter Chips -->
+            <div class="filter-chips">
+                <div class="chip active">All</div>
+                <div class="chip">Guides</div>
+                <div class="chip">Training</div>
+                <div class="chip">Forms</div>
+                <div class="chip">Videos</div>
+            </div>
+
+            <!-- Featured Resource -->
+            <div class="section">
+                <h2 class="section-title">Featured Resources</h2>
+
+                <div class="card" style="background: linear-gradient(135deg, var(--primary-blue-500), var(--prayer-purple)); color: white; cursor: pointer;" onclick="viewResource(1)">
+                    <div class="badge" style="background-color: white; color: var(--primary-blue-500); margin-bottom: 12px; width: fit-content;">
+                        ⭐ New
+                    </div>
+                    <h3 style="margin: 0 0 8px 0; font-size: 20px;">Volunteer Handbook 2025</h3>
+                    <p style="margin: 0 0 12px 0; opacity: 0.9;">
+                        Complete guide to serving at Christine Church. Everything you need to know about volunteering, policies, and best practices.
+                    </p>
+                    <div style="display: flex; gap: 8px; align-items: center;">
+                        <span style="font-size: 12px; opacity: 0.9;">📄 PDF • 24 pages</span>
+                        <span style="font-size: 12px; opacity: 0.9;">• Updated Nov 1, 2025</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Training Materials -->
+            <div class="section">
+                <h2 class="section-title">Training Materials</h2>
+
+                <!-- Training 1 -->
+                <div class="card" style="cursor: pointer;" onclick="viewResource(2)">
+                    <div style="display: flex; gap: 16px; align-items: start;">
+                        <div style="width: 56px; height: 56px; border-radius: 8px; background-color: var(--success-green); display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0;">
+                            🎥
+                        </div>
+                        <div style="flex: 1;">
+                            <h4 style="margin: 0 0 4px 0; font-size: 16px;">Hospitality Team Training</h4>
+                            <p class="text-small" style="margin: 0 0 8px 0; color: var(--gray-600);">
+                                Learn best practices for welcoming guests and creating a warm environment.
+                            </p>
+                            <div style="display: flex; gap: 8px;">
+                                <span class="badge" style="background-color: var(--success-green); color: white; font-size: 10px;">Video</span>
+                                <span class="text-tiny" style="color: var(--gray-500);">15 minutes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Training 2 -->
+                <div class="card" style="cursor: pointer;" onclick="viewResource(3)">
+                    <div style="display: flex; gap: 16px; align-items: start;">
+                        <div style="width: 56px; height: 56px; border-radius: 8px; background-color: var(--primary-blue-500); display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0;">
+                            🎥
+                        </div>
+                        <div style="flex: 1;">
+                            <h4 style="margin: 0 0 4px 0; font-size: 16px;">Set-up Team Orientation</h4>
+                            <p class="text-small" style="margin: 0 0 8px 0; color: var(--gray-600);">
+                                Complete walkthrough of sanctuary setup, sound system, and safety protocols.
+                            </p>
+                            <div style="display: flex; gap: 8px;">
+                                <span class="badge" style="background-color: var(--primary-blue-500); color: white; font-size: 10px;">Video</span>
+                                <span class="text-tiny" style="color: var(--gray-500);">22 minutes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Training 3 -->
+                <div class="card" style="cursor: pointer;" onclick="viewResource(4)">
+                    <div style="display: flex; gap: 16px; align-items: start;">
+                        <div style="width: 56px; height: 56px; border-radius: 8px; background-color: var(--warning-amber); display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0;">
+                            📖
+                        </div>
+                        <div style="flex: 1;">
+                            <h4 style="margin: 0 0 4px 0; font-size: 16px;">Safeguarding Training</h4>
+                            <p class="text-small" style="margin: 0 0 8px 0; color: var(--gray-600);">
+                                Required training for all volunteers working with children and vulnerable adults.
+                            </p>
+                            <div style="display: flex; gap: 8px;">
+                                <span class="badge" style="background-color: var(--error-red); color: white; font-size: 10px;">Required</span>
+                                <span class="text-tiny" style="color: var(--gray-500);">PDF • 12 pages</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Guides -->
+            <div class="section">
+                <h2 class="section-title">Quick Guides</h2>
+
+                <!-- Guide 1 -->
+                <div class="card" style="cursor: pointer;" onclick="viewResource(5)">
+                    <div style="display: flex; gap: 16px; align-items: start;">
+                        <div style="width: 56px; height: 56px; border-radius: 8px; background-color: var(--prayer-purple); display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0;">
+                            📋
+                        </div>
+                        <div style="flex: 1;">
+                            <h4 style="margin: 0 0 4px 0; font-size: 16px;">Coffee Station Setup Checklist</h4>
+                            <p class="text-small" style="margin: 0 0 8px 0; color: var(--gray-600);">
+                                Step-by-step checklist for setting up the Sunday coffee station.
+                            </p>
+                            <div style="display: flex; gap: 8px;">
+                                <span class="badge" style="background-color: var(--gray-200); color: var(--gray-700); font-size: 10px;">Checklist</span>
+                                <span class="text-tiny" style="color: var(--gray-500);">1 page</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Guide 2 -->
+                <div class="card" style="cursor: pointer;" onclick="viewResource(6)">
+                    <div style="display: flex; gap: 16px; align-items: start;">
+                        <div style="width: 56px; height: 56px; border-radius: 8px; background-color: var(--info-blue); display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0;">
+                            📋
+                        </div>
+                        <div style="flex: 1;">
+                            <h4 style="margin: 0 0 4px 0; font-size: 16px;">Sound System Quick Start</h4>
+                            <p class="text-small" style="margin: 0 0 8px 0; color: var(--gray-600);">
+                                Basic operations for the sanctuary sound system.
+                            </p>
+                            <div style="display: flex; gap: 8px;">
+                                <span class="badge" style="background-color: var(--gray-200); color: var(--gray-700); font-size: 10px;">Guide</span>
+                                <span class="text-tiny" style="color: var(--gray-500);">2 pages</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Guide 3 -->
+                <div class="card" style="cursor: pointer;" onclick="viewResource(7)">
+                    <div style="display: flex; gap: 16px; align-items: start;">
+                        <div style="width: 56px; height: 56px; border-radius: 8px; background-color: var(--success-green); display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0;">
+                            📋
+                        </div>
+                        <div style="flex: 1;">
+                            <h4 style="margin: 0 0 4px 0; font-size: 16px;">Greeting & Welcoming Best Practices</h4>
+                            <p class="text-small" style="margin: 0 0 8px 0; color: var(--gray-600);">
+                                Tips for making guests feel welcome and comfortable.
+                            </p>
+                            <div style="display: flex; gap: 8px;">
+                                <span class="badge" style="background-color: var(--gray-200); color: var(--gray-700); font-size: 10px;">Guide</span>
+                                <span class="text-tiny" style="color: var(--gray-500);">3 pages</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Forms & Documents -->
+            <div class="section">
+                <h2 class="section-title">Forms & Documents</h2>
+
+                <!-- Form 1 -->
+                <div class="card" style="cursor: pointer;" onclick="viewResource(8)">
+                    <div style="display: flex; gap: 16px; align-items: start;">
+                        <div style="width: 56px; height: 56px; border-radius: 8px; background-color: var(--gray-600); display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0;">
+                            📄
+                        </div>
+                        <div style="flex: 1;">
+                            <h4 style="margin: 0 0 4px 0; font-size: 16px;">Volunteer Application Form</h4>
+                            <p class="text-small" style="margin: 0 0 8px 0; color: var(--gray-600);">
+                                Required for all new volunteers before starting service.
+                            </p>
+                            <div style="display: flex; gap: 8px;">
+                                <span class="badge" style="background-color: var(--gray-200); color: var(--gray-700); font-size: 10px;">PDF Form</span>
+                                <span class="text-tiny" style="color: var(--gray-500);">2 pages</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form 2 -->
+                <div class="card" style="cursor: pointer;" onclick="viewResource(9)">
+                    <div style="display: flex; gap: 16px; align-items: start;">
+                        <div style="width: 56px; height: 56px; border-radius: 8px; background-color: var(--gray-600); display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0;">
+                            📄
+                        </div>
+                        <div style="flex: 1;">
+                            <h4 style="margin: 0 0 4px 0; font-size: 16px;">Incident Report Form</h4>
+                            <p class="text-small" style="margin: 0 0 8px 0; color: var(--gray-600);">
+                                Use this form to report any incidents during service.
+                            </p>
+                            <div style="display: flex; gap: 8px;">
+                                <span class="badge" style="background-color: var(--gray-200); color: var(--gray-700); font-size: 10px;">PDF Form</span>
+                                <span class="text-tiny" style="color: var(--gray-500);">1 page</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Church Policies -->
+            <div class="section">
+                <h2 class="section-title">Church Policies</h2>
+
+                <!-- Policy 1 -->
+                <div class="card" style="cursor: pointer;" onclick="viewResource(10)">
+                    <div style="display: flex; gap: 16px; align-items: start;">
+                        <div style="width: 56px; height: 56px; border-radius: 8px; background-color: var(--warning-amber); display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0;">
+                            ⚖️
+                        </div>
+                        <div style="flex: 1;">
+                            <h4 style="margin: 0 0 4px 0; font-size: 16px;">Code of Conduct</h4>
+                            <p class="text-small" style="margin: 0 0 8px 0; color: var(--gray-600);">
+                                Expected behavior and ethical guidelines for all volunteers.
+                            </p>
+                            <div style="display: flex; gap: 8px;">
+                                <span class="badge" style="background-color: var(--warning-amber); color: white; font-size: 10px;">Required Reading</span>
+                                <span class="text-tiny" style="color: var(--gray-500);">PDF • 5 pages</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Policy 2 -->
+                <div class="card" style="cursor: pointer;" onclick="viewResource(11)">
+                    <div style="display: flex; gap: 16px; align-items: start;">
+                        <div style="width: 56px; height: 56px; border-radius: 8px; background-color: var(--error-red); display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0;">
+                            🔒
+                        </div>
+                        <div style="flex: 1;">
+                            <h4 style="margin: 0 0 4px 0; font-size: 16px;">Child Protection Policy</h4>
+                            <p class="text-small" style="margin: 0 0 8px 0; color: var(--gray-600);">
+                                Safeguarding policies for working with children and youth.
+                            </p>
+                            <div style="display: flex; gap: 8px;">
+                                <span class="badge" style="background-color: var(--error-red); color: white; font-size: 10px;">Required Reading</span>
+                                <span class="text-tiny" style="color: var(--gray-500);">PDF • 8 pages</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact for Help -->
+            <div class="card" style="text-align: center; background-color: var(--gray-100);">
+                <h3 style="margin: 0 0 8px 0; font-size: 18px;">Need help finding something?</h3>
+                <p style="margin: 0 0 16px 0; color: var(--gray-600);">
+                    Can't find the resource you're looking for? Contact our volunteer coordinator.
+                </p>
+                <button class="btn btn-primary" onclick="contactCoordinator()">
+                    📧 Contact Coordinator
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resource View Modal -->
+    <div id="resourceModal" class="modal-overlay" onclick="closeModal(event)">
+        <div class="modal" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h2 class="modal-title">Volunteer Handbook 2025</h2>
+            </div>
+            <div class="modal-body">
+                <div style="text-align: center; margin-bottom: 24px;">
+                    <div style="width: 80px; height: 80px; border-radius: 12px; background: linear-gradient(135deg, var(--primary-blue-500), var(--prayer-purple)); display: flex; align-items: center; justify-content: center; font-size: 40px; margin: 0 auto; color: white;">
+                        📄
+                    </div>
+                </div>
+
+                <h4 style="font-size: 16px; margin: 0 0 8px 0;">About this resource</h4>
+                <p style="margin: 0 0 16px 0; color: var(--gray-700);">
+                    The complete guide to serving at Christine Church. This handbook covers everything from our mission and values to practical information about volunteering, team structures, policies, and best practices.
+                </p>
+
+                <div style="padding: 16px; background-color: var(--gray-100); border-radius: 8px; margin-bottom: 16px;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                        <div>
+                            <p class="text-small" style="margin: 0; color: var(--gray-600);"><strong>Type:</strong> PDF Document</p>
+                        </div>
+                        <div>
+                            <p class="text-small" style="margin: 0; color: var(--gray-600);"><strong>Pages:</strong> 24</p>
+                        </div>
+                        <div>
+                            <p class="text-small" style="margin: 0; color: var(--gray-600);"><strong>Updated:</strong> Nov 1, 2025</p>
+                        </div>
+                        <div>
+                            <p class="text-small" style="margin: 0; color: var(--gray-600);"><strong>Size:</strong> 2.4 MB</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 style="font-size: 16px; margin: 16px 0 8px 0;">What's inside</h4>
+                <ul style="margin: 0 0 16px 0; padding-left: 20px; color: var(--gray-700);">
+                    <li>Welcome & Mission Statement</li>
+                    <li>Getting Started as a Volunteer</li>
+                    <li>Team Descriptions & Roles</li>
+                    <li>Policies & Procedures</li>
+                    <li>Safeguarding Guidelines</li>
+                    <li>Contact Information</li>
+                </ul>
+
+                <button class="btn btn-primary" onclick="downloadResource()">
+                    📥 Download PDF
+                </button>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeResourceModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <span class="nav-icon">🏠</span>
+            <span>Home</span>
+        </a>
+        <a href="schedule.html" class="nav-item">
+            <span class="nav-icon">📅</span>
+            <span>Schedule</span>
+        </a>
+        <a href="opportunities.html" class="nav-item">
+            <span class="nav-icon">🔍</span>
+            <span>Find</span>
+        </a>
+        <a href="prayer-wall.html" class="nav-item">
+            <span class="nav-icon">🙏</span>
+            <span>Prayer</span>
+        </a>
+        <a href="more.html" class="nav-item">
+            <span class="nav-icon">⚙️</span>
+            <span>More</span>
+        </a>
+    </nav>
+
+    <script src="app.js"></script>
+    <script>
+        function viewResource(resourceId) {
+            document.getElementById('resourceModal').classList.add('active');
+        }
+
+        function closeResourceModal() {
+            document.getElementById('resourceModal').classList.remove('active');
+        }
+
+        function downloadResource() {
+            alert('✓ Download started! The PDF will be saved to your device.');
+        }
+
+        function searchResources() {
+            alert('Search feature coming soon! You\'ll be able to search through all resources by keyword.');
+        }
+
+        function contactCoordinator() {
+            alert('Contact feature will open your email app to message Margaret Wong (volunteer coordinator).');
+        }
+
+        function closeModal(event) {
+            if (event.target.classList.contains('modal-overlay')) {
+                event.target.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>

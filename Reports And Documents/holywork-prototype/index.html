@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HolyWork - Volunteer Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Main Content -->
+    <div class="screen">
+        <div class="container">
+            <!-- Greeting -->
+            <h1>Welcome, Robert 👋</h1>
+            <p class="text-small">God is using you to make a difference!</p>
+
+            <!-- Stats Card -->
+            <div class="stats-card">
+                <h2>3</h2>
+                <p>Upcoming Shifts This Month</p>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="section">
+                <a href="opportunities.html" class="btn btn-primary" style="margin-bottom: 12px;">
+                    🔍 Find Opportunities
+                </a>
+                <a href="schedule.html" class="btn btn-secondary">
+                    📅 My Schedule
+                </a>
+            </div>
+
+            <!-- Upcoming Commitments -->
+            <div class="section">
+                <h2 class="section-title">Upcoming Commitments</h2>
+
+                <div class="schedule-item">
+                    <div class="schedule-date">
+                        <div class="schedule-month">Nov</div>
+                        <div class="schedule-day">3</div>
+                    </div>
+                    <div class="schedule-details">
+                        <div class="schedule-team">Hospitality Team</div>
+                        <div class="schedule-time">⏰ Sunday, 9:00 AM</div>
+                        <div class="schedule-location">📍 Christine Church</div>
+                    </div>
+                </div>
+
+                <div class="schedule-item">
+                    <div class="schedule-date">
+                        <div class="schedule-month">Nov</div>
+                        <div class="schedule-day">10</div>
+                    </div>
+                    <div class="schedule-details">
+                        <div class="schedule-team">Set-up Team</div>
+                        <div class="schedule-time">⏰ Sunday, 8:00 AM</div>
+                        <div class="schedule-location">📍 Christine Church</div>
+                    </div>
+                </div>
+
+                <div class="schedule-item">
+                    <div class="schedule-date">
+                        <div class="schedule-month">Nov</div>
+                        <div class="schedule-day">17</div>
+                    </div>
+                    <div class="schedule-details">
+                        <div class="schedule-team">Hospitality Team</div>
+                        <div class="schedule-time">⏰ Sunday, 9:00 AM</div>
+                        <div class="schedule-location">📍 Christine Church</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Prayer Wall Preview -->
+            <div class="section">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                    <h2 class="section-title mb-0">Prayer Wall</h2>
+                    <a href="prayer-wall.html" style="color: var(--primary-blue-500); text-decoration: none; font-size: 14px;">
+                        See All →
+                    </a>
+                </div>
+
+                <div class="prayer-card">
+                    <div class="prayer-header">
+                        <div class="prayer-avatar">SK</div>
+                        <div>
+                            <div class="prayer-author">Sarah Kim</div>
+                            <div class="prayer-time">2 hours ago</div>
+                        </div>
+                    </div>
+                    <div class="privacy-badge privacy-church-wide">
+                        🌍 Church-wide
+                    </div>
+                    <p>"Pray for healing for my father who is recovering from surgery. Thank you for your prayers! 🙏"</p>
+                    <div class="prayer-reactions">
+                        <button class="reaction-btn active">
+                            🙏 47 Praying
+                        </button>
+                        <button class="reaction-btn">
+                            💬 5 Comments
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item active">
+            <span class="nav-icon">🏠</span>
+            <span>Home</span>
+        </a>
+        <a href="schedule.html" class="nav-item">
+            <span class="nav-icon">📅</span>
+            <span>Schedule</span>
+        </a>
+        <a href="opportunities.html" class="nav-item">
+            <span class="nav-icon">🔍</span>
+            <span>Find</span>
+        </a>
+        <a href="prayer-wall.html" class="nav-item">
+            <span class="nav-icon">🙏</span>
+            <span>Prayer</span>
+        </a>
+        <a href="more.html" class="nav-item">
+            <span class="nav-icon">⚙️</span>
+            <span>More</span>
+        </a>
+    </nav>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HolyWork - Events</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Header -->
+    <div class="top-header">
+        <button class="header-btn" onclick="history.back()">←</button>
+        <h1 class="header-title">Events</h1>
+        <button class="header-btn" onclick="postEvent()">+</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="screen" style="padding-top: 16px;">
+        <div class="container">
+            <!-- Filter Chips -->
+            <div class="filter-chips">
+                <div class="chip active">All Events</div>
+                <div class="chip">My Church</div>
+                <div class="chip">Cross-Church</div>
+                <div class="chip">Going</div>
+            </div>
+
+            <!-- Events List -->
+            <div class="section">
+                <!-- Event 1 - Featured Event -->
+                <div class="card" style="cursor: pointer;" onclick="viewEventDetails(1)">
+                    <div class="badge" style="background-color: var(--warning-amber); color: white; margin-bottom: 12px; width: fit-content;">
+                        🌟 Featured
+                    </div>
+                    <div style="display: flex; gap: 16px;">
+                        <!-- Date Box -->
+                        <div style="text-align: center; background-color: var(--primary-blue-500); color: white; border-radius: 8px; padding: 12px 16px; min-width: 70px;">
+                            <div style="font-size: 12px; font-weight: 600; text-transform: uppercase;">NOV</div>
+                            <div style="font-size: 28px; font-weight: 700; line-height: 1;">10</div>
+                        </div>
+                        <!-- Event Details -->
+                        <div style="flex: 1;">
+                            <h3 style="margin: 0 0 8px 0; font-size: 18px;">Community Thanksgiving Dinner</h3>
+                            <p class="text-small" style="margin: 4px 0;">⏰ Saturday, Nov 10 • 5:00 PM - 8:00 PM</p>
+                            <p class="text-small" style="margin: 4px 0;">📍 Christine Church Community Hall</p>
+                            <p class="text-small" style="margin: 8px 0; color: var(--gray-600);">
+                                Join us for a community Thanksgiving dinner! All are welcome. Sign up to bring a dish or volunteer to help serve.
+                            </p>
+                            <div style="display: flex; gap: 8px; margin-top: 12px; align-items: center;">
+                                <span class="badge badge-success">47 Going</span>
+                                <span class="badge" style="background-color: var(--gray-200); color: var(--gray-700);">12 Interested</span>
+                                <span class="text-tiny" style="color: var(--gray-500);">• 8 Comments</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="card" style="cursor: pointer;" onclick="viewEventDetails(2)">
+                    <div class="badge" style="background-color: var(--info-blue); color: white; margin-bottom: 12px; width: fit-content;">
+                        🤝 Cross-Church
+                    </div>
+                    <div style="display: flex; gap: 16px;">
+                        <div style="text-align: center; background-color: var(--prayer-purple); color: white; border-radius: 8px; padding: 12px 16px; min-width: 70px;">
+                            <div style="font-size: 12px; font-weight: 600; text-transform: uppercase;">NOV</div>
+                            <div style="font-size: 28px; font-weight: 700; line-height: 1;">15</div>
+                        </div>
+                        <div style="flex: 1;">
+                            <h3 style="margin: 0 0 8px 0; font-size: 18px;">Youth Worship Night</h3>
+                            <p class="text-small" style="margin: 4px 0;">⏰ Wednesday, Nov 15 • 7:00 PM - 9:00 PM</p>
+                            <p class="text-small" style="margin: 4px 0;">📍 Grace Community Church (5 miles)</p>
+                            <p class="text-small" style="margin: 8px 0; color: var(--gray-600);">
+                                A special worship night for young adults across all churches. Live music, testimony, and fellowship.
+                            </p>
+                            <div style="display: flex; gap: 8px; margin-top: 12px; align-items: center;">
+                                <span class="badge badge-success">89 Going</span>
+                                <span class="badge" style="background-color: var(--gray-200); color: var(--gray-700);">34 Interested</span>
+                                <span class="text-tiny" style="color: var(--gray-500);">• 15 Comments</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 3 -->
+                <div class="card" style="cursor: pointer;" onclick="viewEventDetails(3)">
+                    <div style="display: flex; gap: 16px;">
+                        <div style="text-align: center; background-color: var(--success-green); color: white; border-radius: 8px; padding: 12px 16px; min-width: 70px;">
+                            <div style="font-size: 12px; font-weight: 600; text-transform: uppercase;">NOV</div>
+                            <div style="font-size: 28px; font-weight: 700; line-height: 1;">17</div>
+                        </div>
+                        <div style="flex: 1;">
+                            <h3 style="margin: 0 0 8px 0; font-size: 18px;">Bible Study Workshop</h3>
+                            <p class="text-small" style="margin: 4px 0;">⏰ Friday, Nov 17 • 6:30 PM - 8:30 PM</p>
+                            <p class="text-small" style="margin: 4px 0;">📍 Christine Church</p>
+                            <p class="text-small" style="margin: 8px 0; color: var(--gray-600);">
+                                Learn effective Bible study methods with Pastor David. Perfect for small group leaders!
+                            </p>
+                            <div style="display: flex; gap: 8px; margin-top: 12px; align-items: center;">
+                                <span class="badge badge-success">23 Going</span>
+                                <span class="badge" style="background-color: var(--gray-200); color: var(--gray-700);">18 Interested</span>
+                                <span class="text-tiny" style="color: var(--gray-500);">• 5 Comments</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 4 -->
+                <div class="card" style="cursor: pointer;" onclick="viewEventDetails(4)">
+                    <div style="display: flex; gap: 16px;">
+                        <div style="text-align: center; background-color: var(--warning-amber); color: white; border-radius: 8px; padding: 12px 16px; min-width: 70px;">
+                            <div style="font-size: 12px; font-weight: 600; text-transform: uppercase;">NOV</div>
+                            <div style="font-size: 28px; font-weight: 700; line-height: 1;">24</div>
+                        </div>
+                        <div style="flex: 1;">
+                            <h3 style="margin: 0 0 8px 0; font-size: 18px;">Christmas Choir Auditions</h3>
+                            <p class="text-small" style="margin: 4px 0;">⏰ Friday, Nov 24 • 7:00 PM - 9:00 PM</p>
+                            <p class="text-small" style="margin: 4px 0;">📍 Christine Church Sanctuary</p>
+                            <p class="text-small" style="margin: 8px 0; color: var(--gray-600);">
+                                Join our Christmas special choir! No experience necessary, just a joyful heart.
+                            </p>
+                            <div style="display: flex; gap: 8px; margin-top: 12px; align-items: center;">
+                                <span class="badge badge-success">12 Going</span>
+                                <span class="badge" style="background-color: var(--gray-200); color: var(--gray-700);">25 Interested</span>
+                                <span class="text-tiny" style="color: var(--gray-500);">• 3 Comments</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 5 -->
+                <div class="card" style="cursor: pointer;" onclick="viewEventDetails(5)">
+                    <div style="display: flex; gap: 16px;">
+                        <div style="text-align: center; background-color: var(--error-red); color: white; border-radius: 8px; padding: 12px 16px; min-width: 70px;">
+                            <div style="font-size: 12px; font-weight: 600; text-transform: uppercase;">DEC</div>
+                            <div style="font-size: 28px; font-weight: 700; line-height: 1;">1</div>
+                        </div>
+                        <div style="flex: 1;">
+                            <h3 style="margin: 0 0 8px 0; font-size: 18px;">Advent Preparation Day</h3>
+                            <p class="text-small" style="margin: 4px 0;">⏰ Friday, Dec 1 • 9:00 AM - 3:00 PM</p>
+                            <p class="text-small" style="margin: 4px 0;">📍 Christine Church</p>
+                            <p class="text-small" style="margin: 8px 0; color: var(--gray-600);">
+                                Help decorate the church for Advent season. Lunch provided!
+                            </p>
+                            <div style="display: flex; gap: 8px; margin-top: 12px; align-items: center;">
+                                <span class="badge badge-success">16 Going</span>
+                                <span class="badge" style="background-color: var(--gray-200); color: var(--gray-700);">8 Interested</span>
+                                <span class="text-tiny" style="color: var(--gray-500);">• 2 Comments</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Event Details Modal -->
+    <div id="eventModal" class="modal-overlay" onclick="closeModal(event)">
+        <div class="modal" onclick="event.stopPropagation()" style="max-width: 600px;">
+            <div class="modal-header">
+                <h2 class="modal-title">Community Thanksgiving Dinner</h2>
+            </div>
+            <div class="modal-body">
+                <!-- Event Info -->
+                <div style="margin-bottom: 24px;">
+                    <div style="display: flex; gap: 12px; margin-bottom: 16px;">
+                        <div style="text-align: center; background-color: var(--primary-blue-500); color: white; border-radius: 8px; padding: 12px 16px; min-width: 70px;">
+                            <div style="font-size: 12px; font-weight: 600;">NOV</div>
+                            <div style="font-size: 28px; font-weight: 700; line-height: 1;">10</div>
+                        </div>
+                        <div style="flex: 1;">
+                            <p class="text-small" style="margin: 4px 0;"><strong>⏰ When:</strong> Saturday, Nov 10 • 5:00 PM - 8:00 PM</p>
+                            <p class="text-small" style="margin: 4px 0;"><strong>📍 Where:</strong> Christine Church Community Hall</p>
+                            <p class="text-small" style="margin: 4px 0;"><strong>👤 Host:</strong> Pastor David Chen</p>
+                        </div>
+                    </div>
+
+                    <p style="color: var(--gray-700); line-height: 1.6;">
+                        Join us for a community Thanksgiving dinner! All are welcome. We'll have traditional turkey dinner with all the sides. Sign up to bring a dish or volunteer to help serve. Let's celebrate together as a community!
+                    </p>
+                </div>
+
+                <!-- Participation Buttons -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px;">
+                    <button class="btn" style="background-color: var(--success-green);" onclick="respondToEvent('going')">
+                        ✓ I'm Going
+                    </button>
+                    <button class="btn btn-secondary" onclick="respondToEvent('interested')">
+                        ⭐ Interested
+                    </button>
+                </div>
+
+                <!-- Attendees -->
+                <div style="padding: 16px; background-color: var(--gray-100); border-radius: 8px; margin-bottom: 24px;">
+                    <h4 style="font-size: 14px; margin: 0 0 12px 0;">Going (47)</h4>
+                    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                        <div class="prayer-avatar" style="width: 36px; height: 36px; font-size: 12px;">SK</div>
+                        <div class="prayer-avatar" style="width: 36px; height: 36px; font-size: 12px; background-color: var(--success-green);">JR</div>
+                        <div class="prayer-avatar" style="width: 36px; height: 36px; font-size: 12px; background-color: var(--warning-amber);">ET</div>
+                        <div class="prayer-avatar" style="width: 36px; height: 36px; font-size: 12px; background-color: var(--primary-blue-500);">DC</div>
+                        <div class="prayer-avatar" style="width: 36px; height: 36px; font-size: 12px; background-color: var(--gray-600);">MW</div>
+                        <div style="width: 36px; height: 36px; border-radius: 50%; background-color: var(--gray-300); display: flex; align-items: center; justify-content: center; font-size: 12px; color: var(--gray-600);">+42</div>
+                    </div>
+                </div>
+
+                <!-- Comments Section -->
+                <div>
+                    <h4 style="font-size: 16px; margin: 0 0 16px 0;">Comments (8)</h4>
+
+                    <!-- Comment 1 -->
+                    <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--gray-200);">
+                        <div style="display: flex; gap: 12px;">
+                            <div class="prayer-avatar" style="width: 36px; height: 36px; font-size: 14px; flex-shrink: 0;">SK</div>
+                            <div style="flex: 1;">
+                                <div style="margin-bottom: 4px;">
+                                    <strong style="font-size: 14px;">Sarah Kim</strong>
+                                    <span class="text-tiny" style="color: var(--gray-400); margin-left: 8px;">2h ago</span>
+                                </div>
+                                <p style="margin: 0; font-size: 14px; color: var(--gray-700);">
+                                    I can bring mashed potatoes and gravy! So excited for this! 🥔
+                                </p>
+                                <div style="margin-top: 8px;">
+                                    <button style="background: none; border: none; font-size: 12px; color: var(--gray-400); cursor: pointer; padding: 0;">👍 5</button>
+                                    <button style="background: none; border: none; font-size: 12px; color: var(--gray-500); cursor: pointer; padding: 0; margin-left: 12px;">Reply</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment 2 -->
+                    <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--gray-200);">
+                        <div style="display: flex; gap: 12px;">
+                            <div class="prayer-avatar" style="width: 36px; height: 36px; font-size: 14px; flex-shrink: 0; background-color: var(--success-green);">JM</div>
+                            <div style="flex: 1;">
+                                <div style="margin-bottom: 4px;">
+                                    <strong style="font-size: 14px;">John Martinez</strong>
+                                    <span class="text-tiny" style="color: var(--gray-400); margin-left: 8px;">5h ago</span>
+                                </div>
+                                <p style="margin: 0; font-size: 14px; color: var(--gray-700);">
+                                    Can we help with setup? What time should we arrive?
+                                </p>
+                                <div style="margin-top: 8px;">
+                                    <button style="background: none; border: none; font-size: 12px; color: var(--gray-400); cursor: pointer; padding: 0;">👍 3</button>
+                                    <button style="background: none; border: none; font-size: 12px; color: var(--gray-500); cursor: pointer; padding: 0; margin-left: 12px;">Reply</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comment 3 -->
+                    <div style="margin-bottom: 16px;">
+                        <div style="display: flex; gap: 12px;">
+                            <div class="prayer-avatar" style="width: 36px; height: 36px; font-size: 14px; flex-shrink: 0; background-color: var(--primary-blue-500);">DC</div>
+                            <div style="flex: 1;">
+                                <div style="margin-bottom: 4px;">
+                                    <strong style="font-size: 14px;">Pastor David Chen</strong>
+                                    <span class="text-tiny" style="color: var(--gray-400); margin-left: 8px;">4h ago</span>
+                                </div>
+                                <p style="margin: 0; font-size: 14px; color: var(--gray-700);">
+                                    @John Martinez Great! Setup crew can come at 3:00 PM. Thanks! 🙏
+                                </p>
+                                <div style="margin-top: 8px;">
+                                    <button style="background: none; border: none; font-size: 12px; color: var(--gray-400); cursor: pointer; padding: 0;">👍 7</button>
+                                    <button style="background: none; border: none; font-size: 12px; color: var(--gray-500); cursor: pointer; padding: 0; margin-left: 12px;">Reply</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add Comment -->
+                    <div style="margin-top: 16px;">
+                        <textarea class="form-textarea" placeholder="Write a comment..." rows="2" id="commentInput"></textarea>
+                        <button class="btn btn-primary" style="margin-top: 8px; font-size: 14px;" onclick="postComment()">
+                            Post Comment
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeEventModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Post Event Modal -->
+    <div id="postEventModal" class="modal-overlay" onclick="closeModal(event)">
+        <div class="modal" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h2 class="modal-title">Create New Event</h2>
+            </div>
+            <div class="modal-body">
+                <form id="eventForm">
+                    <div class="form-group">
+                        <label class="form-label">Event Title *</label>
+                        <input type="text" class="form-input" placeholder="e.g., Community Potluck" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Description *</label>
+                        <textarea class="form-textarea" placeholder="Describe your event..." rows="4" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Date & Time *</label>
+                        <input type="datetime-local" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">End Time</label>
+                        <input type="datetime-local" class="form-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Location *</label>
+                        <select class="form-select" required>
+                            <option value="">Choose a location...</option>
+                            <option>Christine Church - Main Hall</option>
+                            <option>Christine Church - Community Hall</option>
+                            <option>Christine Church - Sanctuary</option>
+                            <option>Grace Community Church</option>
+                            <option>Other (please specify in description)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Event Type</label>
+                        <select class="form-select">
+                            <option>Church-wide Event</option>
+                            <option>Cross-Church Event</option>
+                            <option>Team Event</option>
+                            <option>Community Outreach</option>
+                            <option>Social Gathering</option>
+                            <option>Service Project</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                            <input type="checkbox" style="width: 20px; height: 20px;">
+                            <span style="font-size: 14px;">This is a featured event</span>
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closePostEventModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="submitEvent()">Create Event</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <span class="nav-icon">🏠</span>
+            <span>Home</span>
+        </a>
+        <a href="schedule.html" class="nav-item">
+            <span class="nav-icon">📅</span>
+            <span>Schedule</span>
+        </a>
+        <a href="opportunities.html" class="nav-item">
+            <span class="nav-icon">🔍</span>
+            <span>Find</span>
+        </a>
+        <a href="prayer-wall.html" class="nav-item">
+            <span class="nav-icon">🙏</span>
+            <span>Prayer</span>
+        </a>
+        <a href="more.html" class="nav-item">
+            <span class="nav-icon">⚙️</span>
+            <span>More</span>
+        </a>
+    </nav>
+
+    <script src="app.js"></script>
+    <script>
+        function viewEventDetails(eventId) {
+            document.getElementById('eventModal').classList.add('active');
+        }
+
+        function closeEventModal() {
+            document.getElementById('eventModal').classList.remove('active');
+        }
+
+        function respondToEvent(response) {
+            if (response === 'going') {
+                alert('✓ You\'re marked as going! This event has been added to your schedule.');
+            } else {
+                alert('⭐ You\'re marked as interested! We\'ll send you reminders about this event.');
+            }
+        }
+
+        function postComment() {
+            const input = document.getElementById('commentInput');
+            if (!input.value.trim()) {
+                alert('Please write a comment');
+                return;
+            }
+            alert('✓ Comment posted!');
+            input.value = '';
+        }
+
+        function postEvent() {
+            document.getElementById('postEventModal').classList.add('active');
+        }
+
+        function closePostEventModal() {
+            document.getElementById('postEventModal').classList.remove('active');
+        }
+
+        function submitEvent() {
+            const form = document.getElementById('eventForm');
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+            alert('✓ Event created successfully! It will be reviewed by coordinators before being published.');
+            closePostEventModal();
+            form.reset();
+        }
+
+        function closeModal(event) {
+            if (event.target.classList.contains('modal-overlay')) {
+                event.target.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>
