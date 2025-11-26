@@ -11,7 +11,9 @@ The project focuses on creating an intuitive and visually engaging interface tha
 ## Project Overview
 
 **Course:** CSIS 3375 – UX Design in Web & Mobile App
+
 **Section:** 1
+
 **Instructor:** Padmapriya Arasanipalai Kandhadai
 
 **Student:** Ryan Wang (300390359)
